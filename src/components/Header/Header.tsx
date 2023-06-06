@@ -47,10 +47,13 @@ const Header = () => {
         <LinkContainer>
           {links.map(({pathName, label, description}, ind: number) => {
             const isActive = matchExact(currentPath, pathName)
-
-            const isFirst = ind === 0
+            const firstel = ind === 0
             return (
-              <LinkElement isFirst={isFirst} active={isActive}>
+              <LinkElement
+                firstel={firstel.toString()}
+                active={isActive.toString()}
+                key={`navigation-el-${ind}`}
+              >
                 <Link href={pathName}>{label}</Link>
                 {description && <p>{description}</p>}
               </LinkElement>

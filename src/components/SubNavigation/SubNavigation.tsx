@@ -20,12 +20,11 @@ export const SubNavigation = () => {
       <Divider />
       <SubNavList>
         {subLinks.map(({pathName, label}, ind: number) => {
-          const isActive = matchExact(currentPath, pathName)
-          console.log(currentPath, isActive, label)
+          const active = matchExact(currentPath, pathName)
           return (
             <SubNavLinkListElement key={`${pathName}-${ind}`}>
               <Link href={pathName}>
-                <Pill count={12} isActive={isActive} /> {label}
+                <Pill count={12} active={active.toString()} /> {label}
               </Link>
             </SubNavLinkListElement>
           )

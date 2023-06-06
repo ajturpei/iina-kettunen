@@ -24,6 +24,5 @@ export default function ThemeStyled({children}: {children: React.ReactNode}) {
   const {theme} = themes.find(({pathName}) =>
     matchExact(pathName, currentPath)
   ) ?? {theme: lightTheme}
-  console.log(currentPath)
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }

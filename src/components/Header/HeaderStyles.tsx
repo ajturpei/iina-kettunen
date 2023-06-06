@@ -22,7 +22,7 @@ export const LinkContainer = styled.ul`
   gap: 5.25rem;
   list-style-type: none;
 `
-export const LinkElement = styled.li<{isFirst: Boolean; active: Boolean}>`
+export const LinkElement = styled.li<{firstel: string; active: string}>`
   position: relative;
 
   a {
@@ -33,7 +33,8 @@ export const LinkElement = styled.li<{isFirst: Boolean; active: Boolean}>`
       position: absolute;
       left: -1.5rem;
       top: -0.25rem;
-      content: ${({isFirst, active}) => (active && !isFirst ? "'·'" : 'none')};
+      content: ${({firstel, active}) =>
+        active === 'true' && firstel === 'false' ? "'·'" : 'none'};
     }
   }
 `

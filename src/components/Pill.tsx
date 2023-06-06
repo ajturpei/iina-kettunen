@@ -2,11 +2,11 @@ import styled from 'styled-components'
 
 type PillProps = {
   count: number
-  isActive: boolean
+  active: string
 }
 
-const PillContainer = styled.div<{isActive: boolean}>`
-  background: ${({theme, isActive}) => (isActive ? theme.text : 'none')};
+const PillContainer = styled.div<{active: string}>`
+  background: ${({theme, active}) => (active === 'true' ? theme.text : 'none')};
   border: 1px solid ${({theme}) => theme.color.text};
   border-radius: 1rem;
   padding: 0 0.75rem;
@@ -14,11 +14,12 @@ const PillContainer = styled.div<{isActive: boolean}>`
   display: inline-flex;
   align-items: center;
   margin-right: 0.5rem;
-  color: ${({theme, isActive}) => (isActive ? theme.background : theme.text)};
+  color: ${({theme, active}) =>
+    active === 'true' ? theme.background : theme.text};
 `
 
-const Pill = ({count, isActive}: PillProps) => {
-  return <PillContainer isActive={isActive}>{count}</PillContainer>
+const Pill = ({count, active}: PillProps) => {
+  return <PillContainer active={active}>{count}</PillContainer>
 }
 
 export default Pill
