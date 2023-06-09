@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background-color: ${({theme}) => theme.background};
     font-weight: 300;
+    transition: background-color 0.2s ease-in-out;
   }
   body {
     max-width: 1680px;
@@ -24,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     overflow-x: hidden;
     padding: ${({theme}) => theme.spacing.slarge + ' ' + theme.spacing.xlarge};
-    transition: background-color 0.2s ease-in-out;
   }
   h1, h2, h3, h4, h5 {
     font-weight: 300;
