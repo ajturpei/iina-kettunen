@@ -4,6 +4,7 @@ import GlobalStyle from '../styles/GlobalStyle'
 import {MainContainer} from 'src/components/UI/generalLayoutStyles'
 import Header from 'src/components/Header/Header'
 import ThemeStyled from './theme-provider'
+import {Footer} from 'src/components/Footer/Footer'
 
 const manRope = Manrope({
   weight: ['300', '500', '700'],
@@ -24,11 +25,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body>
         <StyledComponentsRegistry>
           <ThemeStyled>
-            <MainContainer>
-              <GlobalStyle />
-              <Header />
-              {children}
-            </MainContainer>
+            <GlobalStyle />
+            <Header />
+            <MainContainer>{children}</MainContainer>
+            <Footer />
           </ThemeStyled>
         </StyledComponentsRegistry>
       </body>

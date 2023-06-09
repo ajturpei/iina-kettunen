@@ -1,7 +1,25 @@
-'use client'
+import {getHomePageContent} from 'src/queries/homepage'
+import Description from 'src/components/Home/Description'
+import DesignSection from 'src/components/Home/ProductDesignSection'
 
-const HomePage = () => {
-  return <h1>Product, furniture and set designer</h1>
+const HomePage = async () => {
+  const {setDesignShowcase, productDesignShowcase, homepage} =
+    await getHomePageContent(false)
+  console.log(productDesignShowcase, setDesignShowcase, homepage)
+  const {items} = homepage
+  const {header, description, image} = items[0]
+  const {url: mainImageUrl, description: imgDescription} = image
+  const {total: productTotal} = productDesignShowcase
+  const {total: setTotal} = setDesignShowcase
+  return (
+    <>
+      <h1>{header}</h1>
+      <img src={mainImageUrl} />
+      <Description description={description} />
+      <DesignSection header="Product Design" count={productTotal} />
+      <DesignSection header="Set Design" count={setTotal} />
+    </>
+  )
 }
 
 export default HomePage

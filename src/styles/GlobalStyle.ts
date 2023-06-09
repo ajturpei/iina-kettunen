@@ -19,9 +19,11 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 300;
   }
   body {
-    max-width: 100vw;
+    max-width: 1680px;
+    margin: 0 auto;
     min-height: 100vh;
     overflow-x: hidden;
+    padding: ${({theme}) => theme.spacing.slarge + ' ' + theme.spacing.xlarge};
     background-color: ${({theme}) => theme.background};
     transition: background-color 0.2s ease-in-out;
   }
@@ -30,11 +32,13 @@ const GlobalStyle = createGlobalStyle`
     line-height: 110%;
     /* or 110px */
     letter-spacing: -0.02rem;
-    max-width: 42rem;
+    max-width: 40rem;
+
   }
   h1 {
     /** 64px */
     font-size: 4rem;
+    margin-bottom: 4rem;
   }
   h2 {
     font-size: 3rem;
@@ -53,6 +57,7 @@ const GlobalStyle = createGlobalStyle`
   }
   p, caption, a {  
     line-height: 125%;
+    white-space: pre-wrap;
   }
   p {
     font-weight: 500;
@@ -73,6 +78,10 @@ const GlobalStyle = createGlobalStyle`
     &:hover {
       text-decoration: none;
     }
+  }
+
+  img {
+    max-width: 100%;
   }
   
 
