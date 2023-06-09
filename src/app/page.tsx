@@ -1,7 +1,6 @@
 import {getHomePageContent} from 'src/queries/homepage'
 import Description from 'src/components/Home/Description'
 import DesignSection from 'src/components/Home/ProductDesignSection'
-import Image from 'next/image'
 
 const HomePage = async () => {
   const {setDesignShowcase, productDesignShowcase, homepage} =
@@ -15,7 +14,7 @@ const HomePage = async () => {
   return (
     <>
       <h1>{header}</h1>
-      <Image src={mainImageUrl} alt={imgDescription} />
+      <img src={mainImageUrl} alt={imgDescription} />
       <Description description={description} />
       <DesignSection header="Product Design" count={productTotal} />
       <DesignSection header="Set Design" count={setTotal} />
