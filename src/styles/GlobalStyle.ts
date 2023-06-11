@@ -31,16 +31,16 @@ const GlobalStyle = createGlobalStyle`
     line-height: 110%;
     /* or 110px */
     letter-spacing: -0.02rem;
-    max-width: 40rem;
+    max-width: 48rem;
 
   }
   h1 {
-    /** 64px */
-    font-size: 4rem;
+    /** 96px */
+    font-size: 6rem;
     margin-bottom: 4rem;
   }
   h2 {
-    font-size: 3rem;
+    font-size: 5rem;
   }
   h3 {
     font-weight: 500;

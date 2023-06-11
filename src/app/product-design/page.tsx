@@ -1,7 +1,7 @@
 import {SubNavigation} from 'src/components/SubNavigation/SubNavigation'
 
 export const metadata = {
-  title: 'Iina Kettunen | Product Design',
+  title: 'Product Design | Iina Kettunen',
 }
 
 const ProductDesignPage = () => {

@@ -4,9 +4,17 @@ import {IKettunenRautioFields} from '../../contentful/__generated__/types'
 export const getHomePageContent = async (preview: boolean): Promise<any> => {
   const {data} = await fetchGraphQL(
     `query {
-      setDesignShowcase:projectCollection(limit: 20, order:order_ASC, , where: {collectionType_contains_all: "set"}) {
+      setDesignShowcase:projectCollection(limit: 20, order:order_ASC, where: {
+        AND: [
+          { frontpageGallery: true },
+          { collectionType_contains_all: "set" }
+        ]
+      }) {
         total
         items {
+          sys {
+            id
+          }
           name
           year
           mainImage {
@@ -28,9 +36,17 @@ export const getHomePageContent = async (preview: boolean): Promise<any> => {
           description
         }
       }
-      productDesignShowcase:projectCollection(limit: 20, order:order_ASC, , where: {collectionType_contains_all: "product"}) {
+      productDesignShowcase:projectCollection(limit: 20, order:order_ASC, where: {
+        AND: [
+          { frontpageGallery: true },
+          { collectionType_contains_all: "product" }
+        ]
+      }) {
         total
         items {
+          sys {
+            id
+          }
           name
           year
           mainImage {

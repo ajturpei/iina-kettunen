@@ -1,7 +1,7 @@
 import {Divider} from 'src/components/UI/generalLayoutStyles'
 
 export const metadata = {
-  title: 'Iina Kettunen | About',
+  title: 'About | Iina Kettunent',
 }
 
 const AboutPage = () => {

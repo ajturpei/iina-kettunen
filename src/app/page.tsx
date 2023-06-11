@@ -9,15 +9,25 @@ const HomePage = async () => {
   const {items} = homepage
   const {header, description, image} = items[0]
   const {url: mainImageUrl, description: imgDescription} = image
-  const {total: productTotal} = productDesignShowcase
-  const {total: setTotal} = setDesignShowcase
+  const {total: productTotal, items: productItems} = productDesignShowcase
+  const {total: setTotal, items: setItems} = setDesignShowcase
   return (
     <>
       <h1>{header}</h1>
       <img src={mainImageUrl} alt={imgDescription} />
       <Description description={description} />
-      <DesignSection header="Product Design" count={productTotal} />
-      <DesignSection header="Set Design" count={setTotal} />
+      <DesignSection
+        header="Product Design"
+        count={productTotal}
+        link="/product-design"
+        items={productItems}
+      />
+      <DesignSection
+        header="Set Design"
+        count={setTotal}
+        link="/set-design"
+        items={setItems}
+      />
     </>
   )
 }

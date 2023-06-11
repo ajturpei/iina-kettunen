@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Iina Kettunen | Contact',
+  title: 'Contact | Iina Kettunen',
 }
 
 const ContactPage = () => {

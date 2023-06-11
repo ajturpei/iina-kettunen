@@ -10,9 +10,10 @@ import {ThemeProvider} from 'styled-components'
 import {usePathname} from 'next/navigation'
 import path from 'path'
 import {matchExact} from 'src/components/utils'
+import {match} from 'assert'
 
 const themes = [
-  {pathName: '/', theme: lightTheme},
+  {pathName: '/', theme: lightTheme, exact: true},
   {pathName: '/about', theme: greenTheme},
   {pathName: '/product-design', theme: darkTheme},
   {pathName: '/set-design', theme: brownTheme},
@@ -21,8 +22,8 @@ const themes = [
 
 export default function ThemeStyled({children}: {children: React.ReactNode}) {
   const currentPath = usePathname()
-  const {theme} = themes.find(({pathName}) =>
-    matchExact(pathName, currentPath)
+  const {theme} = themes.find(({pathName, exact = false}) =>
+    exact ? matchExact(pathName, currentPath) : currentPath.includes(pathName)
   ) ?? {theme: lightTheme}
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }
