@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import styled from 'styled-components'
+import {device} from '../../theme/breakpoints'
 
 export const DescriptionContainer = styled.div`
   padding: 6rem 3rem;
@@ -12,7 +15,14 @@ export const DescriptionContainer = styled.div`
   }
 `
 
-export const DesignSectionContainer = styled.section`
+export const DesignSectionContainer = styled.section<{
+  animate: boolean
+}>`
+  transform: translate(0, ${({animate}) => (animate ? 0 : '1rem')});
+  opacity: ${({animate}) => (animate ? 1 : 0)};
+  transition: all 0.4s ease-out;
+  display: flex;
+  flex-direction: column;
   margin: -1rem 0 4rem;
 `
 
@@ -38,8 +48,19 @@ export const ViewAll = styled(Link)`
 export const ContentWrapper = styled.article`
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  row-gap: 3rem;
+  @media ${device.tablet} {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 4rem;
+  }
+  @media ${device.laptop} {
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 6rem;
+  }
+
+  align-items: flex-end;
+  column-gap: 1.5rem;
 `
 
 export const YearWrapper = styled.h5``
@@ -50,3 +71,5 @@ export const NameWrapper = styled.h4`
 `
 
 export const ItemWrapper = styled(Link)``
+
+export const Img = styled.img``

@@ -12,7 +12,13 @@ const subLinks = [
   {pathName: '/set-design', label: 'Set Design'},
 ]
 
-export const SubNavigation = () => {
+export const SubNavigation = ({
+  setCount,
+  productCount,
+}: {
+  setCount: number
+  productCount: number
+}) => {
   const currentPath = usePathname()
 
   return (
@@ -24,7 +30,11 @@ export const SubNavigation = () => {
           return (
             <SubNavLinkListElement key={`${pathName}-${ind}`}>
               <Link href={pathName}>
-                <Pill count={12} active={active.toString()} /> {label}
+                <Pill
+                  count={ind === 0 ? productCount : setCount}
+                  active={active.toString()}
+                />{' '}
+                {label}
               </Link>
             </SubNavLinkListElement>
           )

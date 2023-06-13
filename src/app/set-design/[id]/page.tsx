@@ -1,48 +1,21 @@
-import {getProjectData} from 'src/queries/projectpage'
-import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
-import {Metadata, ResolvingMetadata} from 'next'
-import ProjectHeader from 'src/components/Project/ProjectHeader'
-import ProjectDescription from 'src/components/Project/ProjectDescription'
+import {ResolvingMetadata, Metadata} from 'next'
+import ProjectView from 'src/components/Project/ProjectView'
+import {getProjectMetadata} from 'src/components/SEO/projectPageMetadata'
 
-type PageProps = {
+export type ProjectPageProps = {
   params: {id: string}
 }
 
-export async function generateMetadata(
-  {params}: PageProps,
-  parent?: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
   // read route params
   const id = params.id
-
-  // fetch data
-  const project = await getProjectData(id, false)
-  const {name, description} = project ?? {}
-  // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent)?.openGraph?.images || []
-
-  return {
-    title: `${name} | Iina Kettunen`,
-    description,
-  }
+  return getProjectMetadata(id)
 }
 
-const ProjectPage = async ({params}: PageProps) => {
-  const {id} = params
-
-  const project = await getProjectData(id, false)
-  console.log(project.description)
-  const {name, collectionDetails, projectDescription, collectionType} =
-    project ?? {}
-  const ProjectDetailsComponent = documentToReactComponents(
-    collectionDetails.json
-  )
-  return (
-    <>
-      <ProjectHeader detailsComponent={ProjectDetailsComponent} name={name} />
-      <ProjectDescription description={projectDescription} />
-    </>
-  )
-}
+const ProjectPage = async ({params}: ProjectPageProps) => (
+  <ProjectView params={params} />
+)
 
 export default ProjectPage

@@ -1,6 +1,7 @@
 // globalStyles.js
 'use client'
 
+import {device} from 'src/theme'
 import {createGlobalStyle} from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -24,7 +25,17 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     min-height: 100vh;
     overflow-x: hidden;
-    padding: ${({theme}) => theme.spacing.slarge + ' ' + theme.spacing.xlarge};
+    padding: ${({theme}) =>
+      theme.spacing.lmedium + ' ' + theme.spacing.lmedium};
+    @media ${device.tablet} {
+      padding: ${({theme}) => theme.spacing.large + ' ' + theme.spacing.large};
+    }
+    @media ${device.laptop} {
+      padding: ${({theme}) =>
+        theme.spacing.slarge + ' ' + theme.spacing.xlarge};
+    }
+    display: flex;
+    flex-direction: column;
   }
   h1, h2, h3, h4, h5 {
     font-weight: 300;
@@ -36,11 +47,17 @@ const GlobalStyle = createGlobalStyle`
   }
   h1 {
     /** 96px */
-    font-size: 6rem;
+    font-size: 2.5rem;
     margin-bottom: 4rem;
+    @media ${device.tablet} {
+      font-size: 6rem;
+    }
   }
   h2 {
-    font-size: 5rem;
+    font-size: 2.25rem;
+    @media ${device.tablet} {
+      font-size: 5rem;
+    }
   }
   h3 {
     font-weight: 500;
@@ -48,7 +65,10 @@ const GlobalStyle = createGlobalStyle`
   }
   h4 {
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.25rem; 
+    @media ${device.tablet} {
+      font-size: 1.5rem;
+    }
   }
   h5 {
     font-weight: 700;

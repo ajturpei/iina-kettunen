@@ -12,6 +12,7 @@ export const getProjectData = async (
           id
         }
         name
+        year
         mainImage {
           url
           description

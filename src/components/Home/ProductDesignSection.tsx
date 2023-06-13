@@ -1,16 +1,16 @@
 'use client'
 
+import {useInView} from 'react-intersection-observer'
 import Pill from '../Pill'
 import {
   ContentWrapper,
   DesignSectionContainer,
   HeaderWrapper,
-  ItemWrapper,
-  NameWrapper,
   ViewAll,
-  YearWrapper,
 } from './HomeStyles'
 import {Divider} from 'src/components/UI/generalLayoutStyles'
+import {useEffect, useState} from 'react'
+import ProjectWithMainImage from '../Galleries/ProjectWithMainImage'
 
 const DesignSection = ({
   header,
@@ -23,33 +23,36 @@ const DesignSection = ({
   link: string
   items: any
 }) => {
+  const isSSR = typeof window === 'undefined'
+  const [ssr, setSsr] = useState(isSSR)
+
+  const {ref, inView, entry} = useInView({
+    /* Optional options */
+    threshold: 0.1,
+    fallbackInView: true,
+    initialInView: true,
+  })
+
+  const animate = inView || ssr
+
+  useEffect(() => {
+    setSsr(isSSR)
+  }, [isSSR])
+
   return (
-    <>
+    <DesignSectionContainer ref={ref} animate={animate}>
       <Divider />
-      <DesignSectionContainer>
-        <HeaderWrapper>
-          <h2>{header}</h2>
-          <ViewAll href={link}>
-            <span>VIEW ALL</span>
-            <Pill active="false" count={count} />
-          </ViewAll>
-        </HeaderWrapper>
-        <ContentWrapper>
-          {items?.map((item: any, index: number) => {
-            const {mainImage, name, year, sys} = item
-            const {url, description} = mainImage
-            console.log(mainImage)
-            return (
-              <ItemWrapper key={index} href={`${link}/${sys.id}`}>
-                <img src={url} alt={description} />
-                <NameWrapper>{name}</NameWrapper>
-                <YearWrapper>{year}</YearWrapper>
-              </ItemWrapper>
-            )
-          })}
-        </ContentWrapper>
-      </DesignSectionContainer>
-    </>
+      <HeaderWrapper>
+        <h2>{header}</h2>
+        <ViewAll href={link}>
+          <span>VIEW ALL</span>
+          <Pill active="false" count={count} />
+        </ViewAll>
+      </HeaderWrapper>
+      <ContentWrapper>
+        <ProjectWithMainImage items={items} link={link} />
+      </ContentWrapper>
+    </DesignSectionContainer>
   )
 }
 
