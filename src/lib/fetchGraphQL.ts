@@ -1,7 +1,8 @@
 const fetchGraphQL = async (query: any, preview = false) => {
-  return fetch(
+  const res = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
     {
+      next: {revalidate: 60},
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -13,7 +14,8 @@ const fetchGraphQL = async (query: any, preview = false) => {
       },
       body: JSON.stringify({query}),
     }
-  ).then((response) => response.json())
+  )
+  return await res.json()
 }
 
 export default fetchGraphQL
