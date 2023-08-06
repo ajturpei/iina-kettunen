@@ -7,6 +7,7 @@ import {
   LinkContainer,
   LinkElement,
   MobileNav,
+  IMG,
 } from './HeaderStyles'
 
 import Link from 'next/link'
@@ -69,7 +70,7 @@ const Header = () => {
             )
           })}
           <MobileNav onClick={handleOpen}>
-            <img src="/burger-menu.svg" alt="Toggle mobile menu" />
+            <IMG src="/burger.svg" alt="Toggle mobile menu" />
           </MobileNav>
         </LinkContainer>
       </Navigation>

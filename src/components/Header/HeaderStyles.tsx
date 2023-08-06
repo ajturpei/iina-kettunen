@@ -46,10 +46,18 @@ export const LinkElement = styled.li<{firstel: string; active: string}>`
 `
 
 export const MobileNav = styled.button`
+  all: unset;
   svg {
     fill: red;
+    stroke: red;
+    color: red;
   }
-  all: unset;
   align-self: flex-start;
   justify-self: flex-end;
+`
+
+export const IMG = styled.img`
+  fill="#ffffff";
+  stroke: #f50550;
+  color: red;
 `
