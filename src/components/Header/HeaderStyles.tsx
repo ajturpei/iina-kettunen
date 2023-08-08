@@ -1,7 +1,9 @@
 'use client'
 
 import {device} from 'src/theme'
+import {darkTheme} from 'src/theme/themeConfig'
 import styled from 'styled-components'
+import HeaderLinks from './HeaderLinks'
 
 export const HeaderContainer = styled.header`
   margin-bottom: 8rem;
@@ -17,18 +19,28 @@ export const Navigation = styled.nav`
   }
 `
 
-export const LinkContainer = styled.ul`
-  display: grid;
+export const LinkContainer = styled.ul<{isOpen: boolean}>`
   grid-template-columns: 4fr 1fr;
+  display: ${({isOpen}) => (isOpen ? 'none' : 'grid')};
   @media ${device.tablet} {
+    display: grid;
     grid-template-columns: 2fr 1fr 1fr 0.5fr;
   }
   gap: 5.25rem;
   list-style-type: none;
 `
-export const LinkElement = styled.li<{firstel: string; active: string}>`
+export const LinkElement = styled.li<{
+  noMain: boolean
+  firstel: string
+  active: string
+}>`
   position: relative;
-  display: ${({firstel}) => (firstel === 'true' ? 'block' : 'none')};
+  display: ${({firstel, noMain}) =>
+    firstel === 'true' && !noMain
+      ? 'block'
+      : firstel !== 'true' && noMain
+      ? 'block'
+      : 'none'};
   @media ${device.tablet} {
     display: block;
   }
@@ -39,25 +51,59 @@ export const LinkElement = styled.li<{firstel: string; active: string}>`
       position: absolute;
       left: -1.5rem;
       top: -0.25rem;
-      content: ${({firstel, active}) =>
-        active === 'true' && firstel === 'false' ? "'·'" : 'none'};
+      content: '';
+      @media ${device.tablet} {
+        content: ${({firstel, active}) =>
+          active === 'true' && firstel === 'false' ? "'·'" : 'none'};
+      }
     }
   }
 `
 
-export const MobileNav = styled.button`
+export const MobileNavButton = styled.button`
   all: unset;
-  svg {
-    fill: red;
-    stroke: red;
-    color: red;
-  }
   align-self: flex-start;
   justify-self: flex-end;
+  @media ${device.tablet} {
+    display: none;
+  }
+`
+
+export const MobileNav = styled.div<{isOpen: boolean}>`
+  position: fixed;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  width: calc(100% - 3rem);
+  margin: 0 1.5rem;
+  height: ${({isOpen}) => (isOpen ? 'calc(100% - 3.5rem)' : 0)};
+  opacity: ${({isOpen}) => (isOpen ? 1 : 0)};
+  z-index: 10000;
+  background: ${({theme}) => theme.background};
+  color: ${({isOpen, theme}) => (isOpen ? theme.text : 'transparent')};
+
+  @media ${device.tablet} {
+    display: none;
+  }
+`
+
+export const MobileLinkContainer = styled.ul`
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+`
+
+export const MobileLinks = styled.ul`
+  display: block;
+  margin-bottom: 2rem;
+  li a {
+    font-size: ${({theme}) => theme.spacing.slarge};
+  }
 `
 
 export const IMG = styled.img`
-  fill="#ffffff";
-  stroke: #f50550;
-  color: red;
+  filter: invert(${({theme}) => theme.invertFilter});
 `

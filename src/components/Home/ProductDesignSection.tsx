@@ -40,7 +40,7 @@ const DesignSection = ({
   }, [isSSR])
 
   return (
-    <DesignSectionContainer ref={ref} animate={animate}>
+    <DesignSectionContainer ref={ref} animate={animate.toString()}>
       <Divider />
       <HeaderWrapper>
         <h2>{header}</h2>

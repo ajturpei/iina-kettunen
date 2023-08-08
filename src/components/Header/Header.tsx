@@ -1,78 +1,63 @@
 'use client'
 
-import {usePathname} from 'next/navigation'
 import {
   HeaderContainer,
   Navigation,
   LinkContainer,
-  LinkElement,
   MobileNav,
+  MobileLinks,
   IMG,
+  MobileNavButton,
+  MobileLinkContainer,
 } from './HeaderStyles'
-
-import Link from 'next/link'
-import {matchExact} from '../utils'
 import {Divider} from '../UI/generalLayoutStyles'
-import {useState} from 'react'
-
-const links = [
-  {
-    pathName: ['/'],
-    label: 'IINA KETTUNEN',
-    description:
-      'Product and furniture designer with passion for well-thought aesthetics of everyday life.',
-  },
-  {
-    pathName: ['/product-design', '/set-design', '/set-design'],
-    label: 'Work',
-    description: null,
-  },
-
-  {
-    pathName: ['/about'],
-    label: 'About',
-    description: null,
-  },
-  {
-    pathName: ['/contact'],
-    label: 'Contact',
-    description: null,
-  },
-]
+import {createRef, useEffect, useRef, useState} from 'react'
+import HeaderLinks from './HeaderLinks'
+import {disableBodyScroll, clearAllBodyScrollLocks} from 'body-scroll-lock'
 
 const Header = () => {
-  const currentPath = usePathname()
   const [isOpen, setIsOpen] = useState(false)
+  const ref = useRef<HTMLElement>(null)
 
   const handleOpen = () => {
     setIsOpen(!isOpen)
   }
 
+  useEffect(() => {
+    if (isOpen && ref.current) {
+      isOpen && ref.current
+        ? disableBodyScroll(ref.current)
+        : clearAllBodyScrollLocks()
+    }
+    return () => {
+      clearAllBodyScrollLocks()
+    }
+  }, [isOpen, ref])
+
   return (
-    <HeaderContainer>
+    <HeaderContainer ref={ref}>
       <Divider />
       <Navigation>
-        <LinkContainer>
-          {links.map(({pathName, label, description}, ind: number) => {
-            const isActive = pathName.some((name: string) =>
-              matchExact(currentPath, name)
-            )
-            const firstel = ind === 0
-            return (
-              <LinkElement
-                firstel={firstel.toString()}
-                active={isActive.toString()}
-                key={`navigation-el-${ind}`}
-              >
-                <Link href={pathName[0]}>{label}</Link>
-                {description && <p>{description}</p>}
-              </LinkElement>
-            )
-          })}
-          <MobileNav onClick={handleOpen}>
+        <LinkContainer isOpen={isOpen}>
+          <HeaderLinks />
+          <MobileNavButton onClick={handleOpen}>
             <IMG src="/burger.svg" alt="Toggle mobile menu" />
-          </MobileNav>
+          </MobileNavButton>
         </LinkContainer>
+        {isOpen && (
+          <MobileNav isOpen={isOpen}>
+            <MobileLinkContainer>
+              <HeaderLinks isMobile onClick={handleOpen} mainOnly />
+              <MobileNavButton onClick={handleOpen}>
+                <IMG src="/close-button.svg" alt="Toggle mobile menu" />
+              </MobileNavButton>
+            </MobileLinkContainer>
+            <MobileLinks>
+              <Divider />
+              <HeaderLinks noMain={true} isMobile onClick={handleOpen} />
+            </MobileLinks>
+          </MobileNav>
+        )}
       </Navigation>
     </HeaderContainer>
   )

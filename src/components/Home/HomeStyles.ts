@@ -16,10 +16,10 @@ export const DescriptionContainer = styled.div`
 `
 
 export const DesignSectionContainer = styled.section<{
-  animate: boolean
+  animate: string
 }>`
-  transform: translate(0, ${({animate}) => (animate ? 0 : '1rem')});
-  opacity: ${({animate}) => (animate ? 1 : 0)};
+  transform: translate(0, ${({animate}) => (animate === 'true' ? 0 : '1rem')});
+  opacity: ${({animate}) => (animate === 'true' ? 1 : 0)};
   transition: all 0.4s ease-out;
   display: flex;
   flex-direction: column;
