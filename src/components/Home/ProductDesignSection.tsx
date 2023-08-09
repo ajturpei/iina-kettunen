@@ -17,11 +17,13 @@ const DesignSection = ({
   count,
   link,
   items,
+  frontpage = false,
 }: {
   header: string
   count: number
   link: string
   items: any
+  frontpage?: boolean
 }) => {
   const isSSR = typeof window === 'undefined'
   const [ssr, setSsr] = useState(isSSR)
@@ -34,6 +36,10 @@ const DesignSection = ({
   })
 
   const animate = inView || ssr
+  console.log(frontpage)
+  const filteredItems = frontpage
+    ? items.filter((item: any) => item?.frontpageGallery)
+    : items
 
   useEffect(() => {
     setSsr(isSSR)
@@ -50,7 +56,7 @@ const DesignSection = ({
         </ViewAll>
       </HeaderWrapper>
       <ContentWrapper>
-        <ProjectWithMainImage items={items} link={link} />
+        <ProjectWithMainImage items={filteredItems} link={link} />
       </ContentWrapper>
     </DesignSectionContainer>
   )

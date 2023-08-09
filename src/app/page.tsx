@@ -21,12 +21,14 @@ const HomePage = async () => {
         count={productTotal}
         link="/product-design"
         items={productItems}
+        frontpage
       />
       <DesignSection
         header="Set Design"
         count={setTotal}
         link="/set-design"
         items={setItems}
+        frontpage
       />
     </>
   )

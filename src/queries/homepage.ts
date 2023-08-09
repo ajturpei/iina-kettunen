@@ -5,7 +5,6 @@ export const getHomePageContent = async (preview: boolean): Promise<any> => {
     `query {
       setDesignShowcase:projectCollection(limit: 20, order:order_ASC, where: {
         AND: [
-          { frontpageGallery: true },
           { collectionType_contains_all: "set" }
         ]
       }) {
@@ -37,7 +36,6 @@ export const getHomePageContent = async (preview: boolean): Promise<any> => {
       }
       productDesignShowcase:projectCollection(limit: 20, order:order_ASC, where: {
         AND: [
-          { frontpageGallery: true },
           { collectionType_contains_all: "product" }
         ]
       }) {
