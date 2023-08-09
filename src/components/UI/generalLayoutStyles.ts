@@ -35,3 +35,12 @@ export const TwoColumns = styled.div`
     grid-template-columns: 1fr 1fr;
   }
 `
+
+export const SmallLinkWrapper = styled.div`
+  display: block;
+  width: 100%;
+  margin-bottom: 3rem;
+  a {
+    font-size: 1rem;
+  }
+`

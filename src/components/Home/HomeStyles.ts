@@ -5,13 +5,18 @@ import styled from 'styled-components'
 import {device} from '../../theme/breakpoints'
 
 export const DescriptionContainer = styled.div`
-  padding: 6rem 3rem;
+  padding: 3rem 0 6rem;
   white-space: pre-wrap;
   display: flex;
   width: 100%;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   p {
     max-width: 30rem;
+  }
+  @media ${device.tablet} {
+    justify-content: flex-end;
+    padding: 6rem 3rem;
   }
 `
 
@@ -30,6 +35,18 @@ export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  h2 {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  @media ${device.tablet} {
+    flex-wrap: nowrap;
+    h2 {
+      width: auto;
+      margin-bottom: inherit;
+    }
+  }
 `
 
 export const ViewAll = styled(Link)`
