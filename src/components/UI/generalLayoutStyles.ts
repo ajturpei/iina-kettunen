@@ -31,7 +31,7 @@ export const TwoColumns = styled.div`
   display: grid;
   gap: 4rem;
   grid-template-columns: 1fr;
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     grid-template-columns: 1fr 1fr;
   }
 `
