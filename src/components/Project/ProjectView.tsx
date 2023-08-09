@@ -18,9 +18,9 @@ const ProjectView = async ({params}: ProjectPageProps) => {
     galleryReferenceCollection,
   } = (await getProjectData(id, false)) || {}
 
-  const ProjectDetailsComponent = documentToReactComponents(
-    collectionDetails.json
-  )
+  const ProjectDetailsComponent = collectionDetails
+    ? documentToReactComponents(collectionDetails.json)
+    : null
 
   return (
     <>
