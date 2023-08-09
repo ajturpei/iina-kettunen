@@ -36,7 +36,7 @@ const DesignSection = ({
   })
 
   const animate = inView || ssr
-  console.log(frontpage)
+
   const filteredItems = frontpage
     ? items.filter((item: any) => item?.frontpageGallery)
     : items
