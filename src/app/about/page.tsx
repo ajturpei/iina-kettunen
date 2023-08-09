@@ -16,22 +16,32 @@ const AboutPage = () => {
   return (
     <>
       <Divider />
-      <h1>Helsinki based furniture and set designer</h1>
+      <h1>Iina with two eyes for worlds yet unseen</h1>
       <TwoColumns>
         <div>
           <Ingress>
-            Iina Kettunen is a Helsinki-based product and furniture designer.
-            Her passion lies in well-thought aesthetics of everyday life.
+            Iina Kettunen is a concept-driven product, furniture and set
+            designer based in Helsinki. She creates objects that not only serve
+            their purpose and withstand the test of time but also carry
+            meaningful stories within. Her passion lies in crafting
+            well-thought-out aesthetics for everyday life. Paying attention to
+            even the smallest details, she leaves no stone unturned.
           </Ingress>
           <Paragraph>
-            Iina Kettunen is a Helsinki-based product and furniture designer.
-            Her passion lies in well-thought aesthetics of everyday life. With
-            an uncompromising eye for detail and knowledge for quality, Iina's
-            designs serve a purpose in a poetic manner.
+            Considering herself a bystander, but above all, an by-admirer, Iina
+            is always eager to learn about new industries and crafts. Her
+            curiosity serves as a driving force for deeper understanding and is
+            key to her thorough design process. She firmly believes that the
+            secret to lasting design lies in creating pieces that people can
+            form emotional attachments to.
           </Paragraph>
           <Paragraph>
-            Iina Kettunen utilizes her profound knowledge of material and
-            proportion also in set design.
+            In addition to her expertise in product and furniture design, Iina
+            also applies her profound knowledge of materials and proportions to
+            set design. She's a co-founder of{' '}
+            <a href="https://www.kettunenrautio.com/">KETTUNEN RAUTIO</a>, and
+            her work in set design can be explored more vastly at
+            kettunenrautio.com.
           </Paragraph>
         </div>
         <div>
