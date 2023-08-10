@@ -1,5 +1,4 @@
 import fetchGraphQL from 'src/lib/fetchGraphQL'
-import {IKettunenRautioFields} from '../../contentful/__generated__/types'
 
 export const getProjectData = async (
   id: string,

@@ -6,6 +6,7 @@ import Header from 'src/components/Header/Header'
 import ThemeStyled from './theme-provider'
 import {Footer} from 'src/components/Footer/Footer'
 import {Suspense} from 'react'
+import {Metadata} from 'next'
 
 const manRope = Manrope({
   weight: ['300', '500', '700'],
@@ -14,10 +15,15 @@ const manRope = Manrope({
   fallback: ['Helvetica'],
 })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Iina Kettunen',
   description:
     'Product and furniture designer with passion for well-thought aesthetics of everyday life.',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
 }
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
