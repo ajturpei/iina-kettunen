@@ -26,7 +26,8 @@ export const Details = styled.div`
 
 export const Description = styled.p`
   display: block;
-  max-width: 40rem;
+  max-width: 50rem;
+  margin-bottom: 4rem;
   font-size: 1.5rem;
   @media ${device.tablet} {
     font-size: 2.5rem;

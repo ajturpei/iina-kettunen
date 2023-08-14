@@ -17,6 +17,7 @@ export const getProjectData = async (
           description
         }
         projectDescription
+        longDescription
         collectionDetails {
           json
         }

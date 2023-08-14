@@ -14,6 +14,7 @@ const ProjectView = async ({params}: ProjectPageProps) => {
     year,
     collectionDetails,
     projectDescription,
+    longDescription,
     collectionType,
     galleryReferenceCollection,
   } = (await getProjectData(id, false)) || {}
@@ -27,6 +28,7 @@ const ProjectView = async ({params}: ProjectPageProps) => {
       <ProjectDetails collectionType={collectionType} year={year} />
       <ProjectHeader detailsComponent={ProjectDetailsComponent} name={name} />
       <ProjectDescription description={projectDescription} />
+      <ProjectDescription description={longDescription} />
       <ProjectImageGalleries
         galleryReferenceCollection={galleryReferenceCollection}
       />

@@ -3,7 +3,7 @@
 import {Description} from './ProjectStyles'
 
 const ProjectDescription = ({description}: any) => {
-  return <Description>{description}</Description>
+  return description ? <Description>{description}</Description> : null
 }
 
 export default ProjectDescription
