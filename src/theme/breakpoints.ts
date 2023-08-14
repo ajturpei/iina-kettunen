@@ -1,7 +1,13 @@
-const size = {
-  tablet: '768px',
-  laptop: '1024px',
-  laptopL: '1440px',
+export const numericSize = {
+  tablet: 768,
+  laptop: 1024,
+  laptopL: 1440,
+}
+
+export const size = {
+  tablet: `${numericSize.tablet}px`,
+  laptop: `${numericSize.laptop}px`,
+  laptopL: `${numericSize.laptopL}px`,
 }
 
 export const device = {

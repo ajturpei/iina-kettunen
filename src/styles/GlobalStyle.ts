@@ -3,6 +3,10 @@
 
 import {device} from 'src/theme'
 import {createGlobalStyle} from 'styled-components'
+import 'swiper/css/a11y'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -102,8 +106,27 @@ const GlobalStyle = createGlobalStyle`
   img {
     max-width: 100%;
   }
-  
 
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    background: ${({theme}) => theme.background};
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    &::after {
+      font-size: 0.75rem;
+      color: ${({theme}) => theme.text};
+    }
+  }
+  .swiper-button-next {
+    right: -0.75rem;
+  }
+  .swiper-button-prev {
+    left: -0.75rem;
+  }
 `
 
 export default GlobalStyle

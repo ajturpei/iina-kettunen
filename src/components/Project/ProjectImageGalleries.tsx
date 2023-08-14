@@ -8,8 +8,12 @@ import {
   GallerySectionHalf,
   ImageSection,
 } from './ProjectStyles'
+import SliderComponent from '../Slider'
 
 const GallerySection = ({imagesCollection, layoutType}: any) => {
+  if (layoutType === 'slider') {
+    return <SliderComponent imagesCollection={imagesCollection} />
+  }
   if (layoutType === 'left' || layoutType === 'right ') {
     return (
       <GallerySectionHalf layoutType={layoutType}>
