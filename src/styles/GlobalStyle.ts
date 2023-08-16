@@ -109,6 +109,10 @@ const GlobalStyle = createGlobalStyle`
     overflow: visible;
   }
 
+  .swiper-wrapper {
+    align-items: flex-end;
+  }
+
   .swiper-button-next, .swiper-button-prev {
     background: ${({theme}) => theme.background};
     border-radius: 50%;

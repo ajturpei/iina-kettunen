@@ -5,6 +5,7 @@ import {Swiper, SwiperSlide} from 'swiper/react'
 import {Navigation, Pagination, Virtual, A11y} from 'swiper/modules'
 import {numericSize} from '../../theme/breakpoints'
 import {useId} from 'react'
+import {SliderCount, SliderDescription} from './SliderStyles'
 
 const SliderComponent = ({imagesCollection}: any) => {
   const uid = useId()
@@ -34,7 +35,7 @@ const SliderComponent = ({imagesCollection}: any) => {
       navigation
     >
       {imagesCollection?.items?.map(
-        (imgCollectionItem: any, imgIndex: number) => {
+        (imgCollectionItem: any, imgIndex: number, imagesCollection: any) => {
           const {description, url} = imgCollectionItem
           return (
             <SwiperSlide
@@ -42,7 +43,12 @@ const SliderComponent = ({imagesCollection}: any) => {
               virtualIndex={imgIndex}
             >
               <GalleryImage src={url} alt={description} />
-              {description && <div>{description}</div>}
+              <SliderDescription>
+                <div>{description}</div>
+                <SliderCount>
+                  {imgIndex + 1}—{imagesCollection.length}
+                </SliderCount>
+              </SliderDescription>
             </SwiperSlide>
           )
         }
