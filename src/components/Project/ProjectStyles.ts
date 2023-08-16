@@ -73,10 +73,3 @@ export const GallerySectionHalf = styled.section<{
 export const ImageSection = styled.div``
 
 export const GalleryImage = styled.img``
-
-export const Caption = styled.div`
-  margin-top: 0.5rem;
-  text-align: left;
-  display: block;
-  font-size: 1rem;
-`

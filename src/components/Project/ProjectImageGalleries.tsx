@@ -2,12 +2,12 @@
 
 import {Fragment} from 'react'
 import {
-  Caption,
   GalleryImage,
   GallerySectionFull,
   GallerySectionHalf,
   ImageSection,
 } from './ProjectStyles'
+import {Caption} from '../UI/generalLayoutStyles'
 import SliderComponent from '../Slider'
 
 const GallerySection = ({imagesCollection, layoutType}: any) => {

@@ -32,3 +32,9 @@ export const greenTheme = {
   background: color.lightGreen,
   invertFilter: 0,
 }
+
+export const whiteTheme = {
+  ...basic,
+  background: color.white,
+  invertFilter: 0,
+}

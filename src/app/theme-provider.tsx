@@ -5,6 +5,7 @@ import {
   darkTheme,
   greenTheme,
   lightTheme,
+  whiteTheme,
 } from 'src/theme/themeConfig'
 import {ThemeProvider} from 'styled-components'
 import {usePathname} from 'next/navigation'
@@ -14,7 +15,7 @@ import {match} from 'assert'
 
 const themes = [
   {pathName: '/', theme: lightTheme, exact: true},
-  {pathName: '/about', theme: greenTheme},
+  {pathName: '/about', theme: whiteTheme},
   {pathName: '/product-design', theme: darkTheme},
   {pathName: '/set-design', theme: brownTheme},
   {pathName: '/contact', theme: greenTheme},

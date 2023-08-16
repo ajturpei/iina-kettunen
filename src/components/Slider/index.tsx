@@ -13,17 +13,21 @@ const SliderComponent = ({imagesCollection}: any) => {
       modules={[Navigation, Virtual, Pagination, A11y]}
       spaceBetween={15}
       slidesPerView={1}
+      slideVisibleClass="visible-class"
       breakpoints={{
         [numericSize.tablet]: {
           slidesPerView: 2,
           spaceBetween: 20,
+          slidesPerGroup: 1,
         },
         [numericSize.laptop]: {
           slidesPerView: 3,
           spaceBetween: 20,
+          slidesPerGroup: 1,
         },
         [numericSize.laptopL]: {
           slidesPerView: 3,
+          slidesPerGroup: 1,
           spaceBetween: 20,
         },
       }}

@@ -1,6 +1,4 @@
-import Image from 'next/image'
 import {
-  Divider,
   Ingress,
   Paragraph,
   TwoColumns,
@@ -15,7 +13,6 @@ export const metadata = {
 const AboutPage = () => {
   return (
     <>
-      <Divider />
       <h1>Iina with two eyes for worlds yet unseen</h1>
       <TwoColumns>
         <div>
@@ -40,8 +37,8 @@ const AboutPage = () => {
             also applies her profound knowledge of materials and proportions to
             set design. She's a co-founder of{' '}
             <a href="https://www.kettunenrautio.com/">KETTUNEN RAUTIO</a>, and
-            her work in set design can be explored more vastly at
-            kettunenrautio.com.
+            her work in set design can be explored more vastly at{' '}
+            <a href="https://www.kettunenrautio.com/">kettunenrautio.com.</a>
           </Paragraph>
         </div>
         <div>

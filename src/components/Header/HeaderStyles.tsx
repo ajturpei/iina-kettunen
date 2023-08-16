@@ -1,9 +1,7 @@
 'use client'
 
 import {device} from 'src/theme'
-import {darkTheme} from 'src/theme/themeConfig'
 import styled from 'styled-components'
-import HeaderLinks from './HeaderLinks'
 
 export const HeaderContainer = styled.header`
   margin-bottom: 8rem;
@@ -47,7 +45,7 @@ export const LinkElement = styled.li<{
   a {
     margin-bottom: 1rem;
     &:before {
-      font-size: 4rem;
+      font-size: 5rem;
       position: absolute;
       left: -1.5rem;
       top: -0.25rem;

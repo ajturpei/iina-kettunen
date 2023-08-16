@@ -93,10 +93,8 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: 0.02rem;
   }
   a {
-    font-weight: 700;
     font-size: 1.5rem;
     letter-spacing: 0.02em;
-    text-transform: uppercase;
     text-decoration: none;
     &:hover {
       text-decoration: none;

@@ -18,6 +18,8 @@ export const SubNavLinkListElement = styled.li`
   }
   a {
     font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
     display: flex;
     align-items: center;
   }
