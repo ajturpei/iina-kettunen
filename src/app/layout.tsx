@@ -5,7 +5,7 @@ import {MainContainer} from 'src/components/UI/generalLayoutStyles'
 import Header from 'src/components/Header/Header'
 import ThemeStyled from './theme-provider'
 import {Footer} from 'src/components/Footer/Footer'
-import {Suspense} from 'react'
+
 import {Metadata} from 'next'
 
 const manRope = Manrope({
@@ -34,9 +34,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <ThemeStyled>
             <GlobalStyle />
             <Header />
-            <Suspense fallback={<>Loading...</>}>
-              <MainContainer>{children}</MainContainer>
-            </Suspense>
+            <MainContainer>{children}</MainContainer>
             <Footer />
           </ThemeStyled>
         </StyledComponentsRegistry>

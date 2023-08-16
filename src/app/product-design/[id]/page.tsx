@@ -1,8 +1,9 @@
-import {ResolvingMetadata, Metadata} from 'next'
-import {Suspense} from 'react'
+import {Metadata} from 'next'
+import {notFound} from 'next/navigation'
 import {ProjectPageProps} from 'src/app/set-design/[id]/page'
 import ProjectView from 'src/components/Project/ProjectView'
 import {getProjectMetadata} from 'src/components/SEO/projectPageMetadata'
+import {getProjectData} from 'src/queries/projectpage'
 
 export async function generateMetadata({
   params,
@@ -12,10 +13,13 @@ export async function generateMetadata({
   return await getProjectMetadata(id)
 }
 
-const ProjectPage = async ({params}: ProjectPageProps) => (
-  <Suspense>
-    <ProjectView params={params} />
-  </Suspense>
-)
+const ProjectPage = async ({params}: ProjectPageProps) => {
+  const {id} = params
+  const data = await getProjectData(id, false)
+  if (!data || data?.collectionType?.[0] !== 'product') {
+    notFound()
+  }
+  return <ProjectView data={data} />
+}
 
 export default ProjectPage

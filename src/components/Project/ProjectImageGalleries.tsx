@@ -53,11 +53,11 @@ const GallerySection = ({imagesCollection, layoutType}: any) => {
 }
 
 const ProjectImageGalleries = ({galleryReferenceCollection}: any) => {
-  const {items} = galleryReferenceCollection
+  const {items} = galleryReferenceCollection || {}
 
   return (
     <>
-      {items.map((item: any, index: number) => {
+      {items?.map((item: any, index: number) => {
         const {imagesCollection, layoutType} = item ?? {}
         const key = `gallery-section-${index}`
         return (

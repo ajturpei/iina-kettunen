@@ -17,9 +17,9 @@ export const Navigation = styled.nav`
   }
 `
 
-export const LinkContainer = styled.ul<{isOpen: boolean}>`
+export const LinkContainer = styled.ul<{isopen: string}>`
   grid-template-columns: 4fr 1fr;
-  display: ${({isOpen}) => (isOpen ? 'none' : 'grid')};
+  display: ${({isopen}) => (isopen === 'true' ? 'none' : 'grid')};
   @media ${device.tablet} {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 0.5fr;
@@ -28,15 +28,15 @@ export const LinkContainer = styled.ul<{isOpen: boolean}>`
   list-style-type: none;
 `
 export const LinkElement = styled.li<{
-  noMain: boolean
+  nomain: string
   firstel: string
   active: string
 }>`
   position: relative;
-  display: ${({firstel, noMain}) =>
-    firstel === 'true' && !noMain
+  display: ${({firstel, nomain}) =>
+    firstel === 'true' && nomain === 'false'
       ? 'block'
-      : firstel !== 'true' && noMain
+      : firstel !== 'true' && nomain === 'true'
       ? 'block'
       : 'none'};
   @media ${device.tablet} {
@@ -67,7 +67,7 @@ export const MobileNavButton = styled.button`
   }
 `
 
-export const MobileNav = styled.div<{isOpen: boolean}>`
+export const MobileNav = styled.div<{isopen: string}>`
   position: fixed;
   left: 0;
   display: flex;
@@ -78,11 +78,12 @@ export const MobileNav = styled.div<{isOpen: boolean}>`
   flex-wrap: wrap;
   width: calc(100% - 3rem);
   margin: 0 1.5rem;
-  height: ${({isOpen}) => (isOpen ? 'calc(100% - 3.5rem)' : 0)};
-  opacity: ${({isOpen}) => (isOpen ? 1 : 0)};
+  height: ${({isopen}) => (isopen === 'true' ? 'calc(100% - 3.5rem)' : 0)};
+  opacity: ${({isopen}) => (isopen === 'true' ? 1 : 0)};
   z-index: 10000;
   background: ${({theme}) => theme.background};
-  color: ${({isOpen, theme}) => (isOpen ? theme.text : 'transparent')};
+  color: ${({isopen, theme}) =>
+    isopen === 'true' ? theme.text : 'transparent'};
 
   @media ${device.tablet} {
     display: none;

@@ -6,9 +6,7 @@ import {ProjectPageProps} from 'src/app/set-design/[id]/page'
 import ProjectDetails from './ProjectDetails'
 import ProjectImageGalleries from './ProjectImageGalleries'
 
-const ProjectView = async ({params}: ProjectPageProps) => {
-  const {id} = params
-
+const ProjectView = async ({data}: any) => {
   const {
     name,
     year,
@@ -17,7 +15,7 @@ const ProjectView = async ({params}: ProjectPageProps) => {
     longDescription,
     collectionType,
     galleryReferenceCollection,
-  } = (await getProjectData(id, false)) || {}
+  } = data || {}
 
   const ProjectDetailsComponent = collectionDetails
     ? documentToReactComponents(collectionDetails.json)

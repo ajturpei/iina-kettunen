@@ -19,7 +19,7 @@ const ProductDesignPage = async () => {
       <SubNavigation setCount={setDataTotal} productCount={total} />
       <h1>Catalog of well-thought aesthetics</h1>
       <ContentWrapper>
-        <ProjectWithMainImage link="/set-design" items={items} />
+        <ProjectWithMainImage link="/product-design" items={items} />
       </ContentWrapper>
     </>
   )

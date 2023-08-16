@@ -11,7 +11,7 @@ import {
   MobileLinkContainer,
 } from './HeaderStyles'
 import {Divider} from '../UI/generalLayoutStyles'
-import {createRef, useEffect, useRef, useState} from 'react'
+import {useEffect, useRef, useState} from 'react'
 import HeaderLinks from './HeaderLinks'
 import {disableBodyScroll, clearAllBodyScrollLocks} from 'body-scroll-lock'
 
@@ -38,14 +38,14 @@ const Header = () => {
     <HeaderContainer ref={ref}>
       <Divider />
       <Navigation>
-        <LinkContainer isOpen={isOpen}>
+        <LinkContainer isopen={isOpen.toString()}>
           <HeaderLinks />
           <MobileNavButton onClick={handleOpen}>
             <IMG src="/burger.svg" alt="Toggle mobile menu" />
           </MobileNavButton>
         </LinkContainer>
         {isOpen && (
-          <MobileNav isOpen={isOpen}>
+          <MobileNav isopen={isOpen.toString()}>
             <MobileLinkContainer>
               <HeaderLinks isMobile onClick={handleOpen} mainOnly />
               <MobileNavButton onClick={handleOpen}>
