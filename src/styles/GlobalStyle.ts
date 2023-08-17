@@ -106,7 +106,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .swiper {
-    overflow: visible;
+    @media ${device.laptop} {
+      overflow: visible;
+    }
   }
 
   .swiper-wrapper {
@@ -124,10 +126,14 @@ const GlobalStyle = createGlobalStyle`
     }
   }
   .swiper-button-next {
-    right: -0.75rem;
+    @media ${device.laptop} {
+      right: -0.75rem;
+    }
   }
   .swiper-button-prev {
-    left: -0.75rem;
+    @media ${device.laptop} {
+      left: -0.75rem;
+    }
   }
 `
 
