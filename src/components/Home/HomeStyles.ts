@@ -73,7 +73,7 @@ export const ContentWrapper = styled.article`
   }
   @media ${device.laptop} {
     grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 6rem;
+    row-gap: 5rem;
   }
 
   align-items: flex-end;
@@ -88,5 +88,8 @@ export const NameWrapper = styled.h4`
 `
 
 export const ItemWrapper = styled(Link)``
+export const ItemInfoWrapper = styled.div`
+  min-height: 5rem;
+`
 
 export const Img = styled.img``

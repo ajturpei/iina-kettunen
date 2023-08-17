@@ -1,6 +1,12 @@
 'use client'
 
-import {ItemWrapper, Img, NameWrapper, YearWrapper} from '../Home/HomeStyles'
+import {
+  ItemWrapper,
+  ItemInfoWrapper,
+  Img,
+  NameWrapper,
+  YearWrapper,
+} from '../Home/HomeStyles'
 
 const ProjectWithMainImage = ({items, link}: any) => {
   return items?.map((item: any, index: number) => {
@@ -8,9 +14,13 @@ const ProjectWithMainImage = ({items, link}: any) => {
     const {url, description} = mainImage
     return (
       <ItemWrapper key={index} href={`${link}/${sys.id}`}>
-        <Img src={url} alt={description} />
-        <NameWrapper>{name}</NameWrapper>
-        <YearWrapper>{year}</YearWrapper>
+        <div>
+          <Img src={url} alt={description} />
+        </div>
+        <ItemInfoWrapper>
+          <NameWrapper>{name}</NameWrapper>
+          <YearWrapper>{year}</YearWrapper>
+        </ItemInfoWrapper>
       </ItemWrapper>
     )
   })
