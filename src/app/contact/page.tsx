@@ -12,8 +12,8 @@ export const metadata = {
   title: 'Contact | Designer Iina Kettunen',
 }
 
-const ContactPage = async () => {
-  const {topDescription, image} = await getContactPage(false)
+const ContactPage = async ({preview}: {preview: boolean}) => {
+  const {topDescription, image} = (await getContactPage()) || {}
   const {url, description, contentfulMetadata} = image || {}
   const {tags} = contentfulMetadata || {}
   return (

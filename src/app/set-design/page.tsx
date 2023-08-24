@@ -11,8 +11,8 @@ export const metadata = {
 }
 
 const SetDesignPage = async () => {
-  const {total, items} = (await getCategoryProjects('set', false)) ?? {}
-  const projectDataTotal = await getCategoryProjectsCount('product', false)
+  const {total, items} = (await getCategoryProjects('set')) ?? {}
+  const projectDataTotal = await getCategoryProjectsCount('product')
   return (
     <>
       <SubNavigation setCount={total} productCount={projectDataTotal} />

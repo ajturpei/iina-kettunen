@@ -11,8 +11,8 @@ export const metadata = {
 }
 
 const ProductDesignPage = async () => {
-  const {total, items} = (await getCategoryProjects('product', false)) ?? {}
-  const setDataTotal = await getCategoryProjectsCount('set', false)
+  const {total, items} = (await getCategoryProjects('product')) ?? {}
+  const setDataTotal = await getCategoryProjectsCount('set')
 
   return (
     <>

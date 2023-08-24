@@ -1,6 +1,8 @@
+import {draftMode} from 'next/headers'
 import fetchGraphQL from 'src/lib/fetchGraphQL'
 
-export const getHomePageContent = async (preview: boolean): Promise<any> => {
+export const getHomePageContent = async (): Promise<any> => {
+  const {isEnabled} = draftMode()
   const {data} = await fetchGraphQL(
     `query {
       setDesignShowcase:projectCollection(limit: 20, order:order_ASC, where: {
@@ -56,12 +58,12 @@ export const getHomePageContent = async (preview: boolean): Promise<any> => {
         }
       }
     }`,
-    preview
+    isEnabled
   )
 
   return {
-    setDesignShowcase: data.setDesignShowcase,
-    homepage: data.homepageCollection,
-    productDesignShowcase: data.productDesignShowcase,
+    setDesignShowcase: data?.setDesignShowcase,
+    homepage: data?.homepageCollection,
+    productDesignShowcase: data?.productDesignShowcase,
   }
 }

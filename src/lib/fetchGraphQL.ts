@@ -8,7 +8,7 @@ const fetchGraphQL = async (query: any, preview = false) => {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${
           preview
-            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
+            ? process.env.CONTENTFUL_ACCESS_TOKEN_PREVIEW
             : process.env.CONTENTFUL_ACCESS_TOKEN
         }`,
       },

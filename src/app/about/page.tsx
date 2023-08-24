@@ -35,7 +35,7 @@ const AboutPage = () => {
           <Paragraph>
             In addition to her expertise in product and furniture design, Iina
             also applies her profound knowledge of materials and proportions to
-            set design. She's a co-founder of{' '}
+            set design. She&apos;s a co-founder of{' '}
             <a href="https://www.kettunenrautio.com/">KETTUNEN RAUTIO</a>, and
             her work in set design can be explored more vastly at{' '}
             <a href="https://www.kettunenrautio.com/">kettunenrautio.com.</a>

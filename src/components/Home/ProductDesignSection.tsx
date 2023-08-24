@@ -38,7 +38,7 @@ const DesignSection = ({
   const animate = inView || ssr
 
   const filteredItems = frontpage
-    ? items.filter((item: any) => item?.frontpageGallery)
+    ? items?.filter((item: any) => item?.frontpageGallery)
     : items
 
   useEffect(() => {

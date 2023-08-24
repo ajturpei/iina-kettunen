@@ -84,3 +84,23 @@ export const Caption = styled.div<{header?: boolean}>`
   font-weight: ${({header}) => (header ? '700' : '500')};
   text-transform: ${({header}) => (header ? 'uppercase' : 'unset')};
 `
+
+export const PreviewBanner = styled.div`
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: rgba(44, 44, 44, 0.9);
+  h4 {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.25rem;
+  }
+  text-align: center;
+  color: #fff;
+  z-index: 1000000;
+`

@@ -1,6 +1,7 @@
 import fetchGraphQL from 'src/lib/fetchGraphQL'
-
-export const getContactPage = async (preview: boolean): Promise<any> => {
+import {draftMode} from 'next/headers'
+export const getContactPage = async (): Promise<any> => {
+  const {isEnabled} = draftMode()
   const {data} = await fetchGraphQL(
     `query {
       contactPage(id: "iwmzBYioM67cxvGKnGba3") {
@@ -17,8 +18,8 @@ export const getContactPage = async (preview: boolean): Promise<any> => {
         }
       }
     }`,
-    preview
+    isEnabled
   )
 
-  return data.contactPage
+  return data?.contactPage
 }

@@ -1,9 +1,8 @@
+import {draftMode} from 'next/headers'
 import fetchGraphQL from 'src/lib/fetchGraphQL'
 
-export const getProjectData = async (
-  id: string,
-  preview: boolean
-): Promise<any> => {
+export const getProjectData = async (id: string): Promise<any> => {
+  const {isEnabled} = draftMode()
   const {data} = await fetchGraphQL(
     `query projectEntryQuery {
       project(id: "${id}") {
@@ -36,7 +35,7 @@ export const getProjectData = async (
         }
       }
     }`,
-    preview
+    isEnabled
   )
 
   return data?.project
