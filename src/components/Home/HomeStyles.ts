@@ -52,6 +52,11 @@ export const HeaderWrapper = styled.div`
 export const ViewAll = styled(Link)`
   &:hover {
     cursor: pointer;
+    > div {
+      color: ${({theme}) => theme.background};
+      background: ${({theme}) => theme.text};
+      transition: all 0.1s linear;
+    }
   }
   all: unset;
   display: flex;

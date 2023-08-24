@@ -22,5 +22,12 @@ export const SubNavLinkListElement = styled.li`
     text-transform: uppercase;
     display: flex;
     align-items: center;
+    &:hover {
+      > div {
+        color: ${({theme}) => theme.background};
+        background: ${({theme}) => theme.text};
+        transition: all 0.2s linear;
+      }
+    }
   }
 `
