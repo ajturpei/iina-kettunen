@@ -28,10 +28,6 @@ export const Description = styled.p`
   display: block;
   max-width: 50rem;
   margin-bottom: 4rem;
-  font-size: 1.5rem;
-  @media ${device.tablet} {
-    font-size: 2.5rem;
-  }
 `
 
 export const ProjectHeader = styled.div`
@@ -67,6 +63,23 @@ export const GallerySectionHalf = styled.section<{
   gap: 2rem;
   > div {
     width: calc(50% - 1rem);
+  }
+`
+
+export const GallerySectionTwoThird = styled.section`
+  margin: 3rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  img {
+    width: 100%;
+  }
+  @media ${device.tablet} {
+    flex-wrap: nowrap;
+    > div {
+      width: calc(66% - 2rem);
+    }
   }
 `
 

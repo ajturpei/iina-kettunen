@@ -83,12 +83,15 @@ const GlobalStyle = createGlobalStyle`
     white-space: pre-wrap;
   }
   p {
-    font-weight: 500;
-    font-size: 1.5rem;
+    font-weight: 300;
+    font-size: 1.25rem;
     letter-spacing: -0.01rem;
+    @media ${device.tablet} {
+      font-size: 1.5rem;
+    }
   }
   caption {
-    font-weight: 500;
+    font-weight: 300;
     font-size: 1rem;
     letter-spacing: 0.02rem;
   }

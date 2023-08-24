@@ -5,6 +5,15 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
   margin-bottom: 8rem;
+  @media ${device.tablet} {
+    margin-bottom: 15vw;
+  }
+  @media ${device.laptop} {
+    margin-bottom: 18vw;
+  }
+  @media ${device.laptopL} {
+    margin-bottom: 15vw;
+  }
 `
 
 export const Navigation = styled.nav`
@@ -53,6 +62,15 @@ export const LinkElement = styled.li<{
       @media ${device.tablet} {
         content: ${({firstel, active}) =>
           active === 'true' && firstel === 'false' ? "'·'" : 'none'};
+      }
+    }
+    &:hover {
+      text-decoration: ${({firstel}) =>
+        firstel === 'true' ? 'underline' : 'none'};
+      &:before {
+        @media ${device.tablet} {
+          content: ${({firstel}) => (firstel === 'false' ? "'·'" : 'none')};
+        }
       }
     }
   }

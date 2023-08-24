@@ -15,6 +15,7 @@ export const Divider = styled.div`
 `
 
 export const Ingress = styled.h3<{small?: boolean}>`
+  font-weight: 300;
   font-size: ${({theme, small}) =>
     small ? theme.spacing.medium : theme.spacing.xmedium};
   line-height: 1.25;
@@ -37,7 +38,7 @@ export const Paragraph = styled.p`
   margin-bottom: 1rem;
   a {
     text-decoration-line: underline;
-    font-weight: 500;
+    font-weight: 300;
     font-style: normal;
   }
 `

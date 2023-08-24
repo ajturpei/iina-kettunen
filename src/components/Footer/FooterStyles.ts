@@ -30,17 +30,19 @@ export const FooterContentList = styled.ul`
   flex-direction: column;
   width: 100%;
   grid-column: span 2;
-  font-size: 0.75rem;
+
   @media ${device.laptop} {
-    font-size: 1rem;
     grid-column: auto;
     flex-direction: row;
     width: auto;
   }
-  li {
+  li,
+  a {
+    font-size: 0.75rem;
     position: relative;
     margin: 0 0 0.5rem;
     @media ${device.laptop} {
+      font-size: 1rem;
       margin: 0 1rem;
     }
     list-style-type: none;
@@ -59,17 +61,29 @@ export const FooterContentList = styled.ul`
       }
     }
   }
+  a:hover {
+    text-decoration: underline;
+  }
 `
 
 export const FooterHeader = styled.h5`
   display: block;
   font-weight: 300;
   font-size: 0.75rem;
+  a {
+    font-size: 0.75rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   flex-grow: 1;
   text-align: left;
   @media ${device.laptop} {
     width: auto;
     font-size: 1rem;
+    a {
+      font-size: 1rem;
+    }
   }
 `
 

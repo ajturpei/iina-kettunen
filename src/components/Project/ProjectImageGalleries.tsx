@@ -5,6 +5,7 @@ import {
   GalleryImage,
   GallerySectionFull,
   GallerySectionHalf,
+  GallerySectionTwoThird,
   ImageSection,
 } from './ProjectStyles'
 import {Caption} from '../UI/generalLayoutStyles'
@@ -33,6 +34,27 @@ const GallerySection = ({imagesCollection, layoutType}: any) => {
           }
         )}
       </GallerySectionHalf>
+    )
+  }
+  if (layoutType === '2/3') {
+    return (
+      <GallerySectionTwoThird>
+        {imagesCollection?.items?.map(
+          (imgCollectionItem: any, imgIndex: number) => {
+            const {description, url} = imgCollectionItem
+            return (
+              <Fragment key={`img-half-${imgIndex}`}>
+                <ImageSection>
+                  <GalleryImage src={url} alt={description} />
+                </ImageSection>
+                <span>
+                  <Caption>{description}</Caption>
+                </span>
+              </Fragment>
+            )
+          }
+        )}
+      </GallerySectionTwoThird>
     )
   }
   return (

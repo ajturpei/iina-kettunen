@@ -15,11 +15,15 @@ export const Footer = () => {
     <FooterContainer>
       <Divider />
       <FooterContentWrapper>
-        <FooterHeader>Iina Kettunen</FooterHeader>
+        <FooterHeader>
+          <a href="https://www.iinakettunen.com">Iina Kettunen</a>
+        </FooterHeader>
         <FooterContentList>
           <li>+358 (0)44 5320314</li>
           <li>iina@iinakettunen.com</li>
-          <li>@iinakettunen</li>
+          <li>
+            <a href="https://www.instagram.com/iinakettunen/">@iinakettunen</a>
+          </li>
         </FooterContentList>
         <CopyrightWrapper>© 2016—{year}</CopyrightWrapper>
       </FooterContentWrapper>
