@@ -8,7 +8,7 @@ const links = [
     pathName: ['/'],
     label: 'IINA KETTUNEN',
     description:
-      'Product and furniture designer with passion for well-thought aesthetics of everyday life.',
+      'Designer with passion for well-thought aesthetics of everyday life.',
   },
   {
     pathName: ['/product-design', '/set-design'],

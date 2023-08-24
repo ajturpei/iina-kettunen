@@ -25,7 +25,7 @@ export const Footer = () => {
             <a href="https://www.instagram.com/iinakettunen/">@iinakettunen</a>
           </li>
         </FooterContentList>
-        <CopyrightWrapper>© 2016—{year}</CopyrightWrapper>
+        <CopyrightWrapper>© 2013—{year}</CopyrightWrapper>
       </FooterContentWrapper>
     </FooterContainer>
   )

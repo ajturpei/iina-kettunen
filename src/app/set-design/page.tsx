@@ -16,7 +16,7 @@ const SetDesignPage = async () => {
   return (
     <>
       <SubNavigation setCount={total} productCount={projectDataTotal} />
-      <h1>Catalog of Set Design Aesthetics</h1>
+      <h1>Stories in the language of sight</h1>
       <ContentWrapper>
         <ProjectWithMainImage link="/set-design" items={items} />
       </ContentWrapper>
