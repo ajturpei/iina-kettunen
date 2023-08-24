@@ -7,7 +7,7 @@ import {
 import {SubNavigation} from 'src/components/SubNavigation/SubNavigation'
 
 export const metadata = {
-  title: 'Product Design | Iina Kettunen',
+  title: 'Product Design | Designer Iina Kettunen',
 }
 
 const ProductDesignPage = async () => {

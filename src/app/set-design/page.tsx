@@ -7,7 +7,7 @@ import {
 import {SubNavigation} from 'src/components/SubNavigation/SubNavigation'
 
 export const metadata = {
-  title: 'Set Design | Iina Kettunen',
+  title: 'Set Design | Designer Iina Kettunen',
 }
 
 const SetDesignPage = async () => {

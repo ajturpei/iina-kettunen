@@ -7,7 +7,7 @@ import profilePic from '../../../public/iina_portrait.jpg'
 import {IMG} from 'src/components/Header/HeaderStyles'
 
 export const metadata = {
-  title: 'About | Iina Kettunen',
+  title: 'About | Designer Iina Kettunen',
 }
 
 const AboutPage = () => {

@@ -16,7 +16,7 @@ const manRope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: 'Iina Kettunen',
+  title: 'Designer Iina Kettunen | Product, Furniture and Set Design',
   description:
     'Product and furniture designer with passion for well-thought aesthetics of everyday life.',
   formatDetection: {

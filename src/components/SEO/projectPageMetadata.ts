@@ -6,7 +6,7 @@ export const getProjectMetadata = async (id: string) => {
   const {name, description} = project ?? {}
 
   return {
-    title: `${name} | Iina Kettunen`,
+    title: `${name} | Designer Iina Kettunen`,
     description,
   }
 }

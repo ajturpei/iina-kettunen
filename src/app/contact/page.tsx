@@ -9,7 +9,7 @@ import {getContactPage} from 'src/queries/contactpage'
 import {Caption} from 'src/components/UI/generalLayoutStyles'
 
 export const metadata = {
-  title: 'Contact | Iina Kettunen',
+  title: 'Contact | Designer Iina Kettunen',
 }
 
 const ContactPage = async () => {
