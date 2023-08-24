@@ -5,7 +5,7 @@ export const getProjectData = async (id: string): Promise<any> => {
   const {isEnabled} = draftMode()
   const {data} = await fetchGraphQL(
     `query projectEntryQuery {
-      project(id: "${id}") {
+      project(id: "${id}", preview:${isEnabled}) {
         sys {
           id
         }

@@ -4,7 +4,7 @@ export const getContactPage = async (): Promise<any> => {
   const {isEnabled} = draftMode()
   const {data} = await fetchGraphQL(
     `query {
-      contactPage(id: "iwmzBYioM67cxvGKnGba3") {
+      contactPage(id: "iwmzBYioM67cxvGKnGba3", preview:${isEnabled}) {
         topDescription
         image {
           url

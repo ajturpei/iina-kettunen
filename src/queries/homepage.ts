@@ -5,7 +5,7 @@ export const getHomePageContent = async (): Promise<any> => {
   const {isEnabled} = draftMode()
   const {data} = await fetchGraphQL(
     `query {
-      setDesignShowcase:projectCollection(limit: 20, order:order_ASC, where: {
+      setDesignShowcase:projectCollection(limit: 20, order:order_ASC, preview:${isEnabled}, where: {
         AND: [
           { collectionType_contains_all: "set" }
         ]
@@ -36,7 +36,7 @@ export const getHomePageContent = async (): Promise<any> => {
           description
         }
       }
-      productDesignShowcase:projectCollection(limit: 20, order:order_ASC, where: {
+      productDesignShowcase:projectCollection(limit: 20, order:order_ASC, preview:${isEnabled}, where: {
         AND: [
           { collectionType_contains_all: "product" }
         ]

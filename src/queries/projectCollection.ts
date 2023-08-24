@@ -7,7 +7,7 @@ export const getProjectCollectionData = async (
   const {isEnabled} = draftMode()
   const {data} = await fetchGraphQL(
     `query projectCollectionQuery {
-      projectCollection(where:{collectionType_contains_all: "${collection}"},order:order_ASC) {
+      projectCollection(where:{collectionType_contains_all: "${collection}"},order:order_ASC, preview:${isEnabled}) {
         total
         items {
           sys {
@@ -35,7 +35,7 @@ export const getProjectCollectionCount = async (
   const {isEnabled} = draftMode()
   const {data} = await fetchGraphQL(
     `query projectCollectionQuery {
-      projectCollection(where:{collectionType_contains_all: "${collection}"}) {
+      projectCollection(where:{collectionType_contains_all: "${collection}"}, preview:${isEnabled}) {
         total
       }
     }`,
