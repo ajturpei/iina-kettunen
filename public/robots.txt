@@ -1,5 +1,5 @@
 //robots.txt
 
-# Block all crawlers
+# Allow all crawlers
 User-agent: *
-Disallow: /
+Allow: /
