@@ -34,10 +34,11 @@ export const ParagraphHeading = styled.span`
   margin-bottom: 0;
   line-height: 1.25;
 `
-export const Paragraph = styled.p`
+export const Paragraph = styled.p<{nounderline?: boolean}>`
   margin-bottom: 1rem;
   a {
-    text-decoration-line: underline;
+    text-decoration-line: ${({nounderline}) =>
+      nounderline ? 'none' : 'underline'};
     font-weight: 300;
     font-style: normal;
   }

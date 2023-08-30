@@ -29,20 +29,28 @@ export const FooterContentList = styled.ul`
   align-items: left;
   flex-direction: column;
   width: 100%;
-  grid-column: span 2;
 
   @media ${device.laptop} {
+    display: block;
+    text-align: center;
     grid-column: auto;
+    flex-shrink: 0;
     flex-direction: row;
-    width: auto;
+    width: 100%;
   }
   li,
   a {
     font-size: 0.75rem;
+    @media ${device.laptop} {
+      display: inline-block;
+      text-align: left;
+      font-size: 1rem;
+    }
+  }
+  li {
     position: relative;
     margin: 0 0 0.5rem;
     @media ${device.laptop} {
-      font-size: 1rem;
       margin: 0 1rem;
     }
     list-style-type: none;

@@ -13,6 +13,7 @@ export const getProjectCollectionData = async (
           sys {
             id
           }
+          galleryUrl
           name
           year
           order

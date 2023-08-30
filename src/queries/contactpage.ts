@@ -6,6 +6,7 @@ export const getContactPage = async (): Promise<any> => {
     `query {
       contactPage(id: "iwmzBYioM67cxvGKnGba3", preview:${isEnabled}) {
         topDescription
+        imageUrl
         image {
           url
           title

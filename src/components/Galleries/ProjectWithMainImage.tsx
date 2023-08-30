@@ -10,10 +10,10 @@ import {
 
 const ProjectWithMainImage = ({items, link}: any) => {
   return items?.map((item: any, index: number) => {
-    const {mainImage, name, year, sys} = item
+    const {mainImage, name, year, galleryUrl} = item
     const {url, description} = mainImage
     return (
-      <ItemWrapper key={index} href={`${link}/${sys.id}`}>
+      <ItemWrapper key={index} href={`${link}/${galleryUrl}`}>
         <div>
           <Img src={url} alt={description} />
         </div>

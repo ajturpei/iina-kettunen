@@ -1,20 +1,31 @@
 import {getHomePageContent} from 'src/queries/homepage'
 import Description from 'src/components/Home/Description'
 import DesignSection from 'src/components/Home/ProductDesignSection'
+import {Caption} from 'src/components/UI/generalLayoutStyles'
+import Link from 'next/link'
 
 const HomePage = async () => {
   const {setDesignShowcase, productDesignShowcase, homepage} =
     await getHomePageContent()
 
   const {items} = homepage || {}
-  const {header, description, image} = items?.[0] || {}
-  const {url: mainImageUrl, description: imgDescription} = image || {}
+  const {header, description, image, imageUrl} = items?.[0] || {}
+  const {
+    url: mainImageUrl,
+    description: imgDescription,
+    contentfulMetadata,
+  } = image || {}
+  const tag = contentfulMetadata?.tags?.[0]?.name
   const {total: productTotal, items: productItems} = productDesignShowcase || {}
   const {total: setTotal, items: setItems} = setDesignShowcase || {}
   return (
     <>
       <h1>{header}</h1>
-      <img src={mainImageUrl} alt={imgDescription} />
+      <Link href={imageUrl}>
+        <img src={mainImageUrl} alt={imgDescription} />
+        {tag ? <Caption header>{tag}</Caption> : null}
+        <Caption>{imgDescription}</Caption>
+      </Link>
       <Description description={description} />
       <DesignSection
         header="Product Design"

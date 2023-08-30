@@ -7,13 +7,14 @@ import {
 } from 'src/components/UI/generalLayoutStyles'
 import {getContactPage} from 'src/queries/contactpage'
 import {Caption} from 'src/components/UI/generalLayoutStyles'
+import Link from 'next/link'
 
 export const metadata = {
   title: 'Contact | Designer Iina Kettunen',
 }
 
-const ContactPage = async ({preview}: {preview: boolean}) => {
-  const {topDescription, image} = (await getContactPage()) || {}
+const ContactPage = async () => {
+  const {topDescription, image, imageUrl} = (await getContactPage()) || {}
   const {url, description, contentfulMetadata} = image || {}
   const {tags} = contentfulMetadata || {}
   return (
@@ -27,15 +28,15 @@ const ContactPage = async ({preview}: {preview: boolean}) => {
           </Ingress>
         </div>
         <div>
-          <Paragraph>
+          <Paragraph nounderline>
             <ParagraphHeading>Contact</ParagraphHeading>
-            +358 (0)44 5320314
+            <a href="tel:+3580445320314">+358 (0)44 5320314</a>
             <br />
-            iina@iinakettunen.com
+            <a href="mailto:iina@iinakettunen.com">iina@iinakettunen.com</a>
           </Paragraph>
-          <Paragraph>
+          <Paragraph nounderline>
             <ParagraphHeading>Instagram</ParagraphHeading>
-            @iinakettunen
+            <a href="https://www.instagram.com/iinakettunen">@iinakettunen</a>
           </Paragraph>
         </div>
         <div>
@@ -54,9 +55,11 @@ const ContactPage = async ({preview}: {preview: boolean}) => {
       <br />
       {url && (
         <div>
-          <IMG alt={description} src={url} />
-          <Caption header={true}>{tags?.[0].name}</Caption>
-          <Caption>{description}</Caption>
+          <Link href={imageUrl}>
+            <IMG alt={description} src={url} />
+            <Caption header={true}>{tags?.[0].name}</Caption>
+            <Caption>{description}</Caption>
+          </Link>
         </div>
       )}
     </>

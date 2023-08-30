@@ -1,9 +1,9 @@
 import {
+  Caption,
   Ingress,
   Paragraph,
   TwoColumns,
 } from 'src/components/UI/generalLayoutStyles'
-import profilePic from '../../../public/iina_portrait.jpg'
 import {IMG} from 'src/components/Header/HeaderStyles'
 
 export const metadata = {
@@ -43,6 +43,8 @@ const AboutPage = () => {
         </div>
         <div>
           <IMG alt="Iina Kettunen portrait" src="/iina_portrait.jpg" />
+          <Caption header>Photo</Caption>
+          <Caption>Mikael Niemi</Caption>
         </div>
       </TwoColumns>
     </>

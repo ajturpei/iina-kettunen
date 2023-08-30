@@ -32,8 +32,14 @@ export const getHomePageContent = async (): Promise<any> => {
           image {
             url
             description
+            contentfulMetadata {
+              tags {
+                name
+              }
+            }
           }
           description
+          imageUrl
         }
       }
       productDesignShowcase:projectCollection(limit: 20, order:order_ASC, preview:${isEnabled}, where: {

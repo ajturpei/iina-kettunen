@@ -3,32 +3,49 @@ import fetchGraphQL from 'src/lib/fetchGraphQL'
 
 export const getProjectData = async (id: string): Promise<any> => {
   const {isEnabled} = draftMode()
-  const {data} = await fetchGraphQL(
+  const {data, error} = await fetchGraphQL(
     `query projectEntryQuery {
-      project(id: "${id}", preview:${isEnabled}) {
-        sys {
-          id
-        }
-        name
-        year
-        mainImage {
-          url
-          description
-        }
-        projectDescription
-        longDescription
-        collectionDetails {
-          json
-        }
-        collectionType
-        galleryReferenceCollection {
-          items {
-            galleryName
-            layoutType
-            imagesCollection {
-              items {
-                description
-                url
+      projectCollection(
+        where: { galleryUrl: "${id}" },
+        preview: ${isEnabled},
+        limit: 1
+      ) {
+        items {
+          sys {
+            id
+          }
+          galleryUrl
+          name
+          year
+          mainImage {
+            url
+            description
+            contentfulMetadata {
+              tags {
+                name
+              }
+            }
+          }
+          projectDescription
+          longDescription
+          collectionDetails {
+            json
+          }
+          collectionType
+          galleryReferenceCollection(limit: 50) {
+            items {
+              galleryName
+              layoutType
+              imagesCollection {
+                items {
+                  description
+                  url
+                  contentfulMetadata {
+                    tags {
+                      name
+                    }
+                  }
+                }
               }
             }
           }
@@ -38,5 +55,5 @@ export const getProjectData = async (id: string): Promise<any> => {
     isEnabled
   )
 
-  return data?.project
+  return data?.projectCollection?.items[0]
 }
