@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import {device} from '../../theme/breakpoints'
 
 export const DescriptionContainer = styled.div`
@@ -99,6 +99,24 @@ export const ContentWrapper = styled.article`
   column-gap: 1.5rem;
 `
 
+export const ContentWrapperSetDesign = styled.article`
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 3rem;
+  @media ${device.tablet} {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 4rem;
+  }
+  @media ${device.laptop} {
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 5rem;
+  }
+
+  align-items: flex-end;
+  column-gap: 1.5rem;
+`
+
 export const YearWrapper = styled.h5``
 
 export const NameWrapper = styled.h4`
@@ -107,8 +125,17 @@ export const NameWrapper = styled.h4`
 `
 
 export const ItemWrapper = styled(Link)``
-export const ItemInfoWrapper = styled.div`
+export const ItemInfoWrapper = styled.div<{
+  $content?: string
+  $right?: boolean
+}>`
+  &:before {
+    content: ${({$content}) => ($content ? `"${$content}"` : '')};
+    position: absolute;
+    ${({$right}) => ($right ? css(() => 'right: 0') : css(() => 'left:0'))};
+  }
   min-height: 5rem;
+  margin-left: ${({$content, $right}) => ($content && !$right ? '2.5rem' : 0)};
 `
 
 export const Img = styled.img``

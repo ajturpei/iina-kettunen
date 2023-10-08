@@ -12,6 +12,10 @@ export const HeaderWrapper = styled.div`
   }
 `
 
+export const SetDesignContainer = styled.div`
+  margin-bottom: 6rem;
+`
+
 export const Name = styled.h1`
   display: block;
   @media ${device.tablet} {
@@ -104,6 +108,8 @@ export const GallerySectionTwoThird = styled.section`
   }
 `
 
-export const ImageSection = styled.div``
+export const ImageSection = styled.div`
+  position: relative;
+`
 
 export const GalleryImage = styled.img``
