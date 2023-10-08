@@ -5,18 +5,21 @@ import styled from 'styled-components'
 import {device} from '../../theme/breakpoints'
 
 export const DescriptionContainer = styled.div`
-  padding: 3rem 0 6rem;
+  padding: 3rem 1rem 6rem;
   white-space: pre-wrap;
   display: flex;
   width: 100%;
   flex-wrap: wrap;
   justify-content: flex-start;
   p {
-    max-width: 30rem;
+    max-width: 100%;
   }
   @media ${device.tablet} {
     justify-content: flex-end;
     padding: 6rem 3rem;
+    p {
+      max-width: 66%;
+    }
   }
 `
 

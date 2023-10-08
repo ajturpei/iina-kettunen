@@ -46,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 110%;
     /* or 110px */
     letter-spacing: -0.02rem;
-    max-width: 48rem;
+    max-width: 58rem;
 
   }
   h1 {

@@ -3,18 +3,34 @@ import {device} from 'src/theme'
 import styled from 'styled-components'
 
 export const HeaderWrapper = styled.div`
-  display: flex;
+  display: block;
   gap: 2rem;
   justify-content: space-between;
   margin-bottom: 2rem;
+  @media ${device.tablet} {
+    display: flex;
+  }
 `
 
 export const Name = styled.h1`
-  flex-grow: 1;
+  display: block;
+  @media ${device.tablet} {
+    font-size: 3rem;
+  }
+  @media ${device.laptop} {
+    font-size: 6rem;
+  }
 `
 
 export const Details = styled.div`
   margin-right: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  @media ${device.tablet} {
+    display: block;
+    min-width: 20rem;
+  }
   > p {
     margin-bottom: 1rem;
     font-size: 1rem;
