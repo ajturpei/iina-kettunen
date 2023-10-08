@@ -23,6 +23,17 @@ export const DescriptionContainer = styled.div`
   }
 `
 
+export const MiniHeading = styled.h5`
+  margin-top: 3rem;
+  display: block;
+  text-transform: uppercase;
+  width: 100%;
+  max-width: 100%;
+  @media ${device.tablet} {
+    max-width: 66%;
+  }
+`
+
 export const DesignSectionContainer = styled.section<{
   animate: string
 }>`

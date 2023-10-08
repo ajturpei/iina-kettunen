@@ -57,7 +57,7 @@ const ContactPage = async () => {
         <div>
           <Link href={imageUrl}>
             <IMG alt={description} src={url} />
-            <Caption header={true}>{tags?.[0].name}</Caption>
+            <Caption $header="true">{tags?.[0].name}</Caption>
             <Caption>{description}</Caption>
           </Link>
         </div>

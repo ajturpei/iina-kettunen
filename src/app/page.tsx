@@ -23,10 +23,10 @@ const HomePage = async () => {
       <h1>{header}</h1>
       <Link href={imageUrl}>
         <img src={mainImageUrl} alt={imgDescription} />
-        {tag ? <Caption header>{tag}</Caption> : null}
+        {tag ? <Caption $header="true">{tag}</Caption> : null}
         <Caption>{imgDescription}</Caption>
       </Link>
-      <Description description={description} />
+      <Description description={description} heading="about" />
       <DesignSection
         header="Product Design"
         count={productTotal}

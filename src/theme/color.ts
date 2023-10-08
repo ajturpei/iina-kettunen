@@ -4,4 +4,5 @@ export const color = {
   black: '#1E1E1E',
   white: '#FFFDFA',
   lightGreen: '#EBF0E1',
+  buttonGreen: '#91E36A',
 }

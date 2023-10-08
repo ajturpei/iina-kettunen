@@ -1,14 +1,21 @@
 'use client'
 
-import {DescriptionContainer} from './HomeStyles'
+import {DescriptionContainer, MiniHeading} from './HomeStyles'
 
-const Description = ({description}: any) => {
+const Description = ({
+  description,
+  heading,
+}: {
+  description?: string
+  heading?: string
+}) => {
   if (!description) {
     return null
   }
   return (
     <DescriptionContainer>
       <p>{description}</p>
+      {heading && <MiniHeading>{heading}</MiniHeading>}
     </DescriptionContainer>
   )
 }

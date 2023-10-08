@@ -77,14 +77,15 @@ export const SmallLinkWrapper = styled.div`
   }
 `
 
-export const Caption = styled.div<{header?: boolean}>`
+export const Caption = styled.div<{$header?: 'true'}>`
   margin-top: 0.25rem;
   text-align: left;
   display: inline-block;
   margin-right: 50px;
   font-size: 1rem;
-  font-weight: ${({header}) => (header ? '700' : '500')};
-  text-transform: ${({header}) => (header ? 'uppercase' : 'unset')};
+  font-weight: ${({$header}) => ($header === 'true' ? '700' : '500')};
+  text-transform: ${({$header}) =>
+    $header === 'true' ? 'uppercase' : 'unset'};
 `
 
 export const PreviewBanner = styled.div`

@@ -47,7 +47,7 @@ const SliderComponent = ({imagesCollection}: any) => {
               >
                 <GalleryImage src={url} alt={description} />
                 <SliderDescription>
-                  {tag ? <Caption header>{tag}</Caption> : null}
+                  {tag ? <Caption $header="true">{tag}</Caption> : null}
                   <div>{description}</div>
                   <SliderCount>
                     {imgIndex + 1}—{imagesCollection.length}
