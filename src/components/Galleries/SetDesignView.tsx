@@ -12,7 +12,6 @@ import {Caption} from '../UI/generalLayoutStyles'
 import {ItemInfoWrapper, NameWrapper, YearWrapper} from '../Home/HomeStyles'
 
 const Item = ({item, index}: {item: any; index: number}) => {
-  console.log('single items', item)
   const {mainImage, name, year, galleryUrl} = item
   const {url, description} = mainImage || {}
   const fixedUrl = `/set-design/${galleryUrl}`

@@ -13,7 +13,9 @@ export const HeaderWrapper = styled.div`
 `
 
 export const SetDesignContainer = styled.div`
-  margin-bottom: 6rem;
+  @media ${device.tablet} {
+    margin-bottom: 6rem;
+  }
 `
 
 export const Name = styled.h1`
