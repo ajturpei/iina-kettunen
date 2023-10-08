@@ -1,5 +1,6 @@
 'use client'
 
+import SwitchButton from '../Buttons/SwitchButton'
 import {Details, HeaderWrapper, Name} from './ProjectStyles'
 
 const ProjectHeader = ({detailsComponent, name}: any) => {

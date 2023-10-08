@@ -19,7 +19,7 @@ export async function generateMetadata({
 const ProjectPage = async ({params}: ProjectPageProps) => {
   const {id} = params
 
-  const data = await getProjectData(id, false)
+  const data = await getProjectData(id)
   if (!data || data?.collectionType?.[0] !== 'set') {
     notFound()
   }

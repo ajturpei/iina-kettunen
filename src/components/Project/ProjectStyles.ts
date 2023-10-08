@@ -27,6 +27,7 @@ export const Details = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
+
   @media ${device.tablet} {
     display: block;
     min-width: 20rem;
@@ -51,15 +52,19 @@ export const ProjectHeader = styled.div`
   font-size: 1rem;
   font-weight: bold;
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
 `
 
 export const ProjectType = styled(Link)`
   font-size: 1rem;
-  width: 16rem;
+  margin-right: 6.625rem;
   text-transform: uppercase;
 `
 
-export const ProjectYear = styled.div``
+export const ProjectYear = styled.div`
+  margin-right: 6.625rem;
+`
 
 export const GallerySectionFull = styled.section`
   margin: 3rem 0;
