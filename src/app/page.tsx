@@ -26,7 +26,11 @@ const HomePage = async () => {
         {tag ? <Caption $header="true">{tag}</Caption> : null}
         <Caption>{imgDescription}</Caption>
       </Link>
-      <Description description={description} heading="about" />
+      <Description
+        description={description}
+        heading="about"
+        headingLink="/about"
+      />
       <DesignSection
         header="Product Design"
         count={productTotal}

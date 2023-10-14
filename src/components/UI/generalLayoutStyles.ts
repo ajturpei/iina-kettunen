@@ -37,8 +37,8 @@ export const ParagraphHeading = styled.span`
 export const Paragraph = styled.p<{nounderline?: boolean}>`
   margin-bottom: 1rem;
   a {
-    text-decoration-line: ${({nounderline}) =>
-      nounderline ? 'none' : 'underline'};
+    border-bottom: ${({nounderline, theme}) =>
+      !nounderline ? `1px solid ${theme.color.text}` : 'none'};
     font-weight: 300;
     font-style: normal;
   }

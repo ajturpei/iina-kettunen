@@ -65,8 +65,8 @@ export const LinkElement = styled.li<{
       }
     }
     &:hover {
-      text-decoration: ${({firstel}) =>
-        firstel === 'true' ? 'underline' : 'none'};
+      border-bottom: ${({firstel, theme}) =>
+        firstel === 'true' ? `1px solid ${theme.color.text}` : 'none'};
       &:before {
         @media ${device.tablet} {
           content: ${({firstel}) => (firstel === 'false' ? "'·'" : 'none')};

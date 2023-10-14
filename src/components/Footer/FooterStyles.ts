@@ -70,7 +70,7 @@ export const FooterContentList = styled.ul`
     }
   }
   a:hover {
-    text-decoration: underline;
+    border-bottom: 1px solid ${({theme}) => theme.color.text};
   }
 `
 
@@ -81,7 +81,7 @@ export const FooterHeader = styled.h5`
   a {
     font-size: 0.75rem;
     &:hover {
-      text-decoration: underline;
+      border-bottom: 1px solid ${({theme}) => theme.color.text};
     }
   }
   flex-grow: 1;

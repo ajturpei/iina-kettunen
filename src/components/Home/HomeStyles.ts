@@ -29,6 +29,9 @@ export const MiniHeading = styled.h5`
   text-transform: uppercase;
   width: 100%;
   max-width: 100%;
+  a {
+    font-size: inherit;
+  }
   @media ${device.tablet} {
     max-width: 66%;
   }
