@@ -27,8 +27,7 @@ export const Ingress = styled.h3<{small?: boolean}>`
   }
 `
 
-export const ParagraphHeading = styled.span`
-  font-size: ${({theme}) => theme.spacing.medium};
+export const ParagraphHeading = styled.h5`
   text-transform: uppercase;
   display: block;
   margin-bottom: 0;

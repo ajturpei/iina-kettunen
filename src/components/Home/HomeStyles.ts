@@ -78,7 +78,7 @@ export const ViewAll = styled(Link)`
   all: unset;
   display: flex;
   align-items: center;
-  span {
+  h5 {
     margin-right: 0.5rem;
   }
   font-size: 0.75rem;

@@ -23,7 +23,7 @@ const ProjectDetails = ({
       <ProjectHeader>
         <ProjectType href={link}>{collectionText}</ProjectType>
         <ProjectYear>{year}</ProjectYear>
-        {isInProduction && <SwitchButton text="In production" />}
+        <SwitchButton on={isInProduction} text="In production" />
       </ProjectHeader>
     </>
   )

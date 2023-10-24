@@ -14,9 +14,10 @@ export const FooterContentWrapper = styled.div`
   display: grid;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
-  grid-template-columns: 2fr 1fr 1fr;
+  gap: 0;
+  grid-template-columns: 1fr 1fr;
   @media ${device.laptop} {
+    gap: 2rem;
     justify-content: flex-start;
     align-items: center;
     grid-template-columns: 1fr 3fr 1fr;

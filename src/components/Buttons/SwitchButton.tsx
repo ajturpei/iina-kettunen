@@ -1,9 +1,9 @@
 import {Switch, SwitchContainer, SwitchText} from './ButtonStyles'
 
-const SwitchButton = ({on, text}: {on?: 'true'; text?: string}) => {
+const SwitchButton = ({on, text}: {on: boolean; text?: string}) => {
   return (
     <SwitchContainer>
-      <Switch />
+      <Switch $on={on} />
       {text && <SwitchText>{text}</SwitchText>}
     </SwitchContainer>
   )

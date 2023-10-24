@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
-export const Switch = styled.div`
-  background-color: ${({theme}) => theme.color.buttonGreen};
+export const Switch = styled.div<{$on: boolean}>`
+  background-color: ${({theme, $on}) =>
+    $on ? theme.color.buttonGreen : theme.color.lightGreen};
+  border: 1px solid ${({theme}) => theme.color.black};
   display: inline-block;
   width: 35px;
   height: 20px;
@@ -15,8 +17,8 @@ export const Switch = styled.div`
     height: 12px;
     border-radius: 100px;
     background: ${({theme}) => theme.color.black};
-    right: 4px;
-    top: 4px;
+    ${({$on}) => ($on ? 'right:4px' : 'left: 4px')};
+    top: 3px;
   }
 `
 

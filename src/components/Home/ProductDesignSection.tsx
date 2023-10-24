@@ -51,7 +51,7 @@ const DesignSection = ({
       <HeaderWrapper>
         <h2>{header}</h2>
         <ViewAll href={link}>
-          <span>VIEW ALL</span>
+          <h5>VIEW ALL</h5>
           <Pill active="false" count={count} />
         </ViewAll>
       </HeaderWrapper>

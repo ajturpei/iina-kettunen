@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background-color: ${({theme}) => theme.background};
     font-weight: 300;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.25s ease-out;
   }
   body {
     max-width: 1680px;
@@ -47,7 +47,6 @@ const GlobalStyle = createGlobalStyle`
     /* or 110px */
     letter-spacing: -0.02rem;
     max-width: 58rem;
-
   }
   h1 {
     /** 96px */
@@ -100,11 +99,16 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: 0.02em;
     text-decoration: none;
     &:hover {
+     
       text-decoration: none;
+      img {
+        opacity: 0.8;
+      }
     }
   }
 
   img {
+    transition: opacity 0.3s ease-in-out;
     max-width: 100%;
   }
 
