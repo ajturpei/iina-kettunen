@@ -43,7 +43,7 @@ const AboutPage = () => {
         </div>
         <div>
           <IMG alt="Iina Kettunen portrait" src="/iina_portrait.jpg" />
-          <Caption header>Photo</Caption>
+          <Caption $header="true">Photo</Caption>
           <Caption>Mikael Niemi</Caption>
         </div>
       </TwoColumns>

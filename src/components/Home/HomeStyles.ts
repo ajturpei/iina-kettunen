@@ -5,26 +5,25 @@ import styled, {css} from 'styled-components'
 import {device} from '../../theme/breakpoints'
 
 export const DescriptionContainer = styled.div`
-  padding: 3rem 1rem 6rem;
+  padding: 4rem 3rem 4rem 0;
   white-space: pre-wrap;
-  display: flex;
+  display: block;
   width: 100%;
   flex-wrap: wrap;
   justify-content: flex-start;
   p {
     max-width: 100%;
   }
-  @media ${device.tablet} {
-    justify-content: flex-end;
-    padding: 6rem 3rem;
+  @media ${device.laptop} {
+    padding: 4rem 8rem 0;
+    padding-left: 30%;
     p {
-      max-width: 66%;
+      width: 100%;
     }
   }
 `
 
 export const MiniHeading = styled.h5`
-  margin-top: 3rem;
   display: block;
   text-transform: uppercase;
   width: 100%;
@@ -32,8 +31,9 @@ export const MiniHeading = styled.h5`
   a {
     font-size: inherit;
   }
-  @media ${device.tablet} {
-    max-width: 66%;
+  @media ${device.laptop} {
+    margin-bottom: 4rem;
+    width: 100%;
   }
 `
 

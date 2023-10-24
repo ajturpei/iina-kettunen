@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import {DescriptionContainer, MiniHeading} from './HomeStyles'
+import {Ingress} from '../UI/generalLayoutStyles'
 
 const Description = ({
   description,
@@ -17,7 +18,7 @@ const Description = ({
   }
   return (
     <DescriptionContainer>
-      <p>{description}</p>
+      <Ingress>{description}</Ingress>
       {heading &&
         (headingLink ? (
           <MiniHeading>
