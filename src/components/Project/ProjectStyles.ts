@@ -31,7 +31,7 @@ export const Name = styled.h1`
 export const Details = styled.div`
   margin-right: 3rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 1rem;
 
   @media ${device.tablet} {
@@ -106,6 +106,9 @@ export const GallerySectionTwoThird = styled.section`
     flex-wrap: nowrap;
     > div {
       width: calc(66% - 2rem);
+    }
+    span {
+      width: 33.33%;
     }
   }
 `

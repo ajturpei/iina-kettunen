@@ -13,9 +13,9 @@ const ProjectDetails = ({
   collectionType: any
   isInProduction: boolean
 }) => {
-  const collectionText =
-    collectionType?.[0] === 'set' ? 'Set Design' : 'Product Design'
-  const link = collectionType?.[0] === 'set' ? '/set-design' : '/product-design'
+  const isSetDesign = collectionType?.[0] === 'set'
+  const collectionText = isSetDesign ? 'Set design' : 'Product design'
+  const link = isSetDesign ? '/set-design' : '/product-design'
 
   return (
     <>
@@ -23,7 +23,9 @@ const ProjectDetails = ({
       <ProjectHeader>
         <ProjectType href={link}>{collectionText}</ProjectType>
         <ProjectYear>{year}</ProjectYear>
-        <SwitchButton on={isInProduction} text="In production" />
+        {!isSetDesign && (
+          <SwitchButton on={isInProduction} text="In production" />
+        )}
       </ProjectHeader>
     </>
   )

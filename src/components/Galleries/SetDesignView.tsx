@@ -8,7 +8,6 @@ import {
   GallerySectionHalf,
   SetDesignContainer,
 } from '../Project/ProjectStyles'
-import {Caption} from '../UI/generalLayoutStyles'
 import {ItemInfoWrapper, NameWrapper, YearWrapper} from '../Home/HomeStyles'
 
 const Item = ({item, index}: {item: any; index: number}) => {

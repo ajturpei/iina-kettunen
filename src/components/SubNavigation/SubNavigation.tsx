@@ -8,8 +8,8 @@ import {usePathname} from 'next/navigation'
 import {matchExact} from '../utils'
 
 const subLinks = [
-  {pathName: '/product-design', label: 'Product Design'},
-  {pathName: '/set-design', label: 'Set Design'},
+  {pathName: '/product-design', label: 'Product design'},
+  {pathName: '/set-design', label: 'Set design'},
 ]
 
 export const SubNavigation = ({

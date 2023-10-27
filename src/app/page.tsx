@@ -32,14 +32,14 @@ const HomePage = async () => {
         headingLink="/about"
       />
       <DesignSection
-        header="Product Design"
+        header="Product design"
         count={productTotal}
         link="/product-design"
         items={productItems}
         frontpage
       />
       <DesignSection
-        header="Set Design"
+        header="Set design"
         count={setTotal}
         link="/set-design"
         items={setItems}

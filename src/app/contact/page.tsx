@@ -16,6 +16,7 @@ export const metadata = {
 const ContactPage = async () => {
   const {topDescription, image, imageUrl} = (await getContactPage()) || {}
   const {url, description, contentfulMetadata} = image || {}
+  console.log(contentfulMetadata)
   const {tags} = contentfulMetadata || {}
   return (
     <>
@@ -57,7 +58,7 @@ const ContactPage = async () => {
         <div>
           <Link href={imageUrl}>
             <IMG alt={description} src={url} />
-            <Caption $header="true">{tags?.[0].name}</Caption>
+            <Caption $header="true">{tags?.[0]?.name}</Caption>
             <Caption>{description}</Caption>
           </Link>
         </div>

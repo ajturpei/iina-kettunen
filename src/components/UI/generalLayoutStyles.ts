@@ -106,3 +106,9 @@ export const PreviewBanner = styled.div`
   color: #fff;
   z-index: 1000000;
 `
+
+export const TextWrapper = styled.div`
+  p {
+    margin-bottom: 1.5rem;
+  }
+`

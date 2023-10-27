@@ -42,6 +42,7 @@ export const FooterContentList = styled.ul`
   li,
   a {
     font-size: 0.75rem;
+
     @media ${device.laptop} {
       display: inline-block;
       text-align: left;
@@ -71,7 +72,7 @@ export const FooterContentList = styled.ul`
     }
   }
   a:hover {
-    border-bottom: 1px solid ${({theme}) => theme.color.text};
+    text-decoration: none;
   }
 `
 
@@ -82,7 +83,7 @@ export const FooterHeader = styled.h5`
   a {
     font-size: 0.75rem;
     &:hover {
-      border-bottom: 1px solid ${({theme}) => theme.color.text};
+      text-decoration: none;
     }
   }
   flex-grow: 1;
