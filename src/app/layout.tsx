@@ -28,6 +28,13 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  openGraph: {
+    images: [
+      {
+        url: 'https://iinakettunen.com/iina_og.png',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
