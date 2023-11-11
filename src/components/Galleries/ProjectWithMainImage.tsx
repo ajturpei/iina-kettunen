@@ -18,8 +18,8 @@ const ProjectWithMainImage = ({items, link}: any) => {
           <Img src={url} alt={description} />
         </div>
         <ItemInfoWrapper>
-          <NameWrapper>{name}</NameWrapper>
-          <YearWrapper>{year}</YearWrapper>
+          <NameWrapper as="h5">{name}</NameWrapper>
+          <YearWrapper as="h5">{year}</YearWrapper>
         </ItemInfoWrapper>
       </ItemWrapper>
     )

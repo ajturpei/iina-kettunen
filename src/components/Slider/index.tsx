@@ -58,9 +58,6 @@ const SliderComponent = ({imagesCollection}: any) => {
           }
         )}
       </Swiper>
-      <br />
-      <br />
-      <br />
     </>
   )
 }

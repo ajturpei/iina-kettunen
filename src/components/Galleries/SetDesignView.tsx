@@ -26,7 +26,7 @@ const Item = ({item, index}: {item: any; index: number}) => {
         <ImageSection>
           <Link href={fixedUrl}>
             <ItemInfoWrapper
-              $content={index === 1 ? '▸' : '◂'}
+              $content={index === 1 ? '►' : '◄'}
               $right={index === 1}
             >
               <NameWrapper as="h5">{name}</NameWrapper>

@@ -22,7 +22,7 @@ export const Ingress = styled.h3<{small?: boolean}>`
   margin-bottom: 2rem;
   @media ${device.tablet} {
     font-size: ${({theme, small}) =>
-      small ? theme.spacing.medium : theme.spacing.slarge};
+      small ? theme.spacing.medium : theme.spacing.xmedium};
     margin-bottom: 4rem;
   }
 `
@@ -77,12 +77,11 @@ export const SmallLinkWrapper = styled.div`
 `
 
 export const Caption = styled.div<{$header?: 'true'}>`
-  margin-top: 0.25rem;
   text-align: left;
   display: inline-block;
   margin-right: 50px;
   font-size: 1rem;
-  font-weight: ${({$header}) => ($header === 'true' ? '700' : '500')};
+  font-weight: ${({$header}) => ($header === 'true' ? '700' : '300')};
   text-transform: ${({$header}) =>
     $header === 'true' ? 'uppercase' : 'unset'};
 `

@@ -84,12 +84,32 @@ export const GallerySectionHalf = styled.section<{
 }>`
   margin: 3rem 0;
   display: flex;
+  grid-template-columns: 1fr;
   flex-direction: ${({layoutType}) =>
     layoutType === 'left' ? 'row' : 'row-reverse'};
   flex-wrap: wrap;
+  align-items: flex-end;
   gap: 2rem;
+  @media ${device.tablet} {
+    grid-template-columns: 1fr 1fr;
+  }
   > div {
-    width: calc(50% - 1rem);
+    width: calc(50% - 2rem);
+  }
+`
+
+export const GallerySection5050 = styled.section`
+  margin: 3rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 2rem;
+  @media ${device.tablet} {
+    grid-template-columns: 1fr 1fr;
+  }
+  > div {
+    width: 100%;
   }
 `
 
@@ -97,15 +117,15 @@ export const GallerySectionTwoThird = styled.section`
   margin: 3rem 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   width: 100%;
   img {
     width: 100%;
   }
   @media ${device.tablet} {
     flex-wrap: nowrap;
+    gap: 2rem;
     > div {
-      width: calc(66% - 2rem);
+      width: 66.66%;
     }
     span {
       width: 33.33%;

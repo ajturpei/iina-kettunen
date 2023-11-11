@@ -4,7 +4,7 @@ import {Fragment} from 'react'
 import {
   GalleryImage,
   GallerySectionFull,
-  GallerySectionHalf,
+  GallerySection5050,
   GallerySectionTwoThird,
   ImageSection,
 } from './ProjectStyles'
@@ -15,25 +15,25 @@ const GallerySection = ({imagesCollection, layoutType}: any) => {
   if (layoutType === 'slider') {
     return <SliderComponent imagesCollection={imagesCollection} />
   }
-  if (layoutType === 'left' || layoutType === 'right ') {
+  if (layoutType === '50/50') {
     return (
-      <GallerySectionHalf layoutType={layoutType}>
+      <GallerySection5050>
         {imagesCollection?.items?.map(
           (imgCollectionItem: any, imgIndex: number) => {
             const {description, url} = imgCollectionItem
             return (
-              <Fragment key={`img-half-${imgIndex}`}>
+              <div key={`img-half-${imgIndex}`}>
                 <ImageSection>
                   <GalleryImage src={url} alt={description} />
                 </ImageSection>
                 <ImageSection>
                   <Caption>{description}</Caption>
                 </ImageSection>
-              </Fragment>
+              </div>
             )
           }
         )}
-      </GallerySectionHalf>
+      </GallerySection5050>
     )
   }
   if (layoutType === '2/3') {

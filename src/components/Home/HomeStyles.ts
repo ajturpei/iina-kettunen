@@ -133,6 +133,7 @@ export const ItemInfoWrapper = styled.div<{
   $right?: boolean
 }>`
   &:before {
+    font-size: 1rem;
     content: ${({$content}) => ($content ? `"${$content}"` : '')};
     position: absolute;
     ${({$right}) => ($right ? css(() => 'right: 0') : css(() => 'left:0'))};
