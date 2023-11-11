@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import {
-  GallerySectionFull,
   ImageSection,
   GalleryImage,
   GallerySectionHalf,
@@ -14,41 +13,27 @@ const Item = ({item, index}: {item: any; index: number}) => {
   const {mainImage, name, year, galleryUrl} = item
   const {url, description} = mainImage || {}
   const fixedUrl = `/set-design/${galleryUrl}`
+  const layoutType = index % 2 === 0 ? 'left' : 'right'
 
-  if (index === 0 || index === 1) {
-    return (
-      <GallerySectionHalf layoutType={index === 0 ? 'left' : 'right'}>
-        <ImageSection>
-          <Link href={fixedUrl}>
-            <GalleryImage src={url} alt={description} />
-          </Link>
-        </ImageSection>
-        <ImageSection>
-          <Link href={fixedUrl}>
-            <ItemInfoWrapper
-              $content={index === 1 ? '►' : '◄'}
-              $right={index === 1}
-            >
-              <NameWrapper as="h5">{name}</NameWrapper>
-              <YearWrapper>{year}</YearWrapper>
-            </ItemInfoWrapper>
-          </Link>
-        </ImageSection>
-      </GallerySectionHalf>
-    )
-  }
   return (
-    <GallerySectionFull>
+    <GallerySectionHalf layoutType={layoutType}>
       <ImageSection>
         <Link href={fixedUrl}>
           <GalleryImage src={url} alt={description} />
         </Link>
-        <ItemInfoWrapper $content="▲">
-          <NameWrapper as="h5">{name}</NameWrapper>
-          <YearWrapper>{year}</YearWrapper>
-        </ItemInfoWrapper>
       </ImageSection>
-    </GallerySectionFull>
+      <ImageSection>
+        <Link href={fixedUrl}>
+          <ItemInfoWrapper
+            $content={layoutType === 'right' ? '►' : '◄'}
+            $right={layoutType === 'right'}
+          >
+            <NameWrapper as="h5">{name}</NameWrapper>
+            <YearWrapper>{year}</YearWrapper>
+          </ItemInfoWrapper>
+        </Link>
+      </ImageSection>
+    </GallerySectionHalf>
   )
 }
 
