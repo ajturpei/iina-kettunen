@@ -136,6 +136,7 @@ export const ItemInfoWrapper = styled.div<{
     font-size: 1rem;
     content: ${({$content}) => ($content ? `"${$content}"` : '')};
     position: absolute;
+    top: 0.25rem;
     ${({$right}) => ($right ? css(() => 'right: 0') : css(() => 'left:0'))};
   }
   min-height: 5rem;

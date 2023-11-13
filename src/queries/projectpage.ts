@@ -17,7 +17,7 @@ export const getProjectData = async (id: string): Promise<any> => {
           galleryUrl
           name
           year
-          inProduction
+          projectStatus
           mainImage {
             url
             description

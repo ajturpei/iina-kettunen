@@ -11,6 +11,7 @@ import {Footer} from 'src/components/Footer/Footer'
 
 import {Metadata} from 'next'
 import {draftMode} from 'next/headers'
+import Script from 'next/script'
 
 const manRope = Manrope({
   weight: ['300', '500', '700'],
@@ -37,25 +38,43 @@ export const metadata: Metadata = {
   },
 }
 
+const gtmEnabled = process.env.NODE_ENV !== 'development'
+
 export default function RootLayout({children}: {children: React.ReactNode}) {
   const {isEnabled} = draftMode()
   return (
-    <html lang="en" className={manRope.className}>
-      <body>
-        <StyledComponentsRegistry>
-          <ThemeStyled>
-            <GlobalStyle />
-            {isEnabled && (
-              <PreviewBanner>
-                <h4>Preview mode</h4>
-              </PreviewBanner>
-            )}
-            <Header />
-            <MainContainer>{children}</MainContainer>
-            <Footer />
-          </ThemeStyled>
-        </StyledComponentsRegistry>
-      </body>
-    </html>
+    <>
+      {gtmEnabled && (
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-QN0LBNKEDG" />
+      )}
+      {gtmEnabled && (
+        <Script id="google-analytics">
+          {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-QN0LBNKEDG');
+      `}
+        </Script>
+      )}
+      <html lang="en" className={manRope.className}>
+        <body>
+          <StyledComponentsRegistry>
+            <ThemeStyled>
+              <GlobalStyle />
+              {isEnabled && (
+                <PreviewBanner>
+                  <h4>Preview mode</h4>
+                </PreviewBanner>
+              )}
+              <Header />
+              <MainContainer>{children}</MainContainer>
+              <Footer />
+            </ThemeStyled>
+          </StyledComponentsRegistry>
+        </body>
+      </html>
+    </>
   )
 }

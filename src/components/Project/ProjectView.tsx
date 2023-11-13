@@ -14,21 +14,19 @@ const ProjectView = async ({data}: any) => {
     longDescription,
     collectionType,
     galleryReferenceCollection,
-    inProduction,
+    projectStatus,
   } = data || {}
 
   const ProjectDetailsComponent = collectionDetails
     ? documentToReactComponents(collectionDetails.json)
     : null
 
-  const isInProduction = inProduction?.includes('true')
-
   return (
     <>
       <ProjectDetails
         collectionType={collectionType}
         year={year}
-        isInProduction={isInProduction}
+        projectStatus={projectStatus?.[0]}
       />
       <ProjectHeader detailsComponent={ProjectDetailsComponent} name={name} />
       <ProjectDescription description={projectDescription} />

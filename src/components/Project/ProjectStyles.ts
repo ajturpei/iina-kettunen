@@ -88,13 +88,19 @@ export const GallerySectionHalf = styled.section<{
   flex-direction: ${({layoutType}) =>
     layoutType === 'left' ? 'row' : 'row-reverse'};
   flex-wrap: wrap;
-  align-items: flex-end;
   gap: 2rem;
   @media ${device.tablet} {
     grid-template-columns: 1fr 1fr;
   }
+  h5 {
+    margin-top: 0;
+  }
   > div {
     width: calc(50% - 2rem);
+    > a > div {
+      min-height: auto;
+      align-items: center;
+    }
   }
 `
 

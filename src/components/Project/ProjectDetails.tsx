@@ -1,17 +1,17 @@
 'use client'
 
-import SwitchButton from '../Buttons/SwitchButton'
+import Status from '../Buttons/Status'
 import {Divider} from '../UI/generalLayoutStyles'
 import {ProjectHeader, ProjectType, ProjectYear} from './ProjectStyles'
 
 const ProjectDetails = ({
   year,
   collectionType,
-  isInProduction,
+  projectStatus,
 }: {
   year: number
   collectionType: any
-  isInProduction: boolean
+  projectStatus?: string
 }) => {
   const isSetDesign = collectionType?.[0] === 'set'
   const collectionText = isSetDesign ? 'Set design' : 'Product design'
@@ -23,9 +23,7 @@ const ProjectDetails = ({
       <ProjectHeader>
         <ProjectType href={link}>{collectionText}</ProjectType>
         <ProjectYear>{year}</ProjectYear>
-        {!isSetDesign && (
-          <SwitchButton on={isInProduction} text="In production" />
-        )}
+        <Status text={projectStatus} />
       </ProjectHeader>
     </>
   )
