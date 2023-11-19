@@ -8,6 +8,7 @@ import {
   SetDesignContainer,
 } from '../Project/ProjectStyles'
 import {ItemInfoWrapper, NameWrapper, YearWrapper} from '../Home/HomeStyles'
+import {Fragment} from 'react'
 
 const Item = ({item, index}: {item: any; index: number}) => {
   const {mainImage, name, year, galleryUrl} = item
@@ -39,9 +40,9 @@ const Item = ({item, index}: {item: any; index: number}) => {
 
 const SetDesignView = ({items}: {items: any}) => {
   return items.map((item: any, idx: number) => (
-    <SetDesignContainer key={`set-design-view-${idx}`}>
+    <Fragment key={`set-design-view-${idx}`}>
       <Item item={item} index={idx} />
-    </SetDesignContainer>
+    </Fragment>
   ))
 }
 

@@ -21,14 +21,17 @@ const GallerySection = ({imagesCollection, layoutType}: any) => {
         {imagesCollection?.items?.map(
           (imgCollectionItem: any, imgIndex: number) => {
             const {description, url} = imgCollectionItem
+            console.log(description)
             return (
               <div key={`img-half-${imgIndex}`}>
                 <ImageSection>
                   <GalleryImage src={url} alt={description} />
                 </ImageSection>
-                <ImageSection>
-                  <Caption>{description}</Caption>
-                </ImageSection>
+                {description && (
+                  <ImageSection>
+                    <Caption>{description}</Caption>
+                  </ImageSection>
+                )}
               </div>
             )
           }
@@ -65,7 +68,7 @@ const GallerySection = ({imagesCollection, layoutType}: any) => {
           return (
             <ImageSection key={`img-full-${imgIndex}`}>
               <GalleryImage src={url} alt={description} />
-              <Caption>{description}</Caption>
+              {description && <Caption>{description}</Caption>}
             </ImageSection>
           )
         }

@@ -32,7 +32,7 @@ export const MiniHeading = styled.h5`
     font-size: inherit;
   }
   @media ${device.laptop} {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     width: 100%;
   }
 `
@@ -46,6 +46,9 @@ export const DesignSectionContainer = styled.section<{
   display: flex;
   flex-direction: column;
   margin: -1rem 0 4rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
 `
 
 export const HeaderWrapper = styled.div`
@@ -134,13 +137,13 @@ export const ItemInfoWrapper = styled.div<{
 }>`
   &:before {
     font-size: 1rem;
-    content: ${({$content}) => ($content ? `"${$content}"` : '')};
+    @media ${device.tablet} {
+      content: ${({$content}) => ($content ? `"${$content}"` : '')};
+    }
     position: absolute;
     top: 0.25rem;
     ${({$right}) => ($right ? css(() => 'right: 0') : css(() => 'left:0'))};
   }
-  min-height: 5rem;
-  margin-left: ${({$content, $right}) => ($content && !$right ? '2.5rem' : 0)};
 `
 
 export const Img = styled.img``

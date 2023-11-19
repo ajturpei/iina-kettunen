@@ -6,12 +6,12 @@ import {Navigation, Pagination, Virtual, A11y} from 'swiper/modules'
 import {numericSize} from '../../theme/breakpoints'
 import {useId} from 'react'
 import {SliderCount, SliderDescription} from './SliderStyles'
-import {Caption} from '../UI/generalLayoutStyles'
+import {Caption, Section} from '../UI/generalLayoutStyles'
 
 const SliderComponent = ({imagesCollection}: any) => {
   const uid = useId()
   return (
-    <>
+    <Section>
       <Swiper
         modules={[Navigation, Virtual, Pagination, A11y]}
         spaceBetween={15}
@@ -58,7 +58,7 @@ const SliderComponent = ({imagesCollection}: any) => {
           }
         )}
       </Swiper>
-    </>
+    </Section>
   )
 }
 

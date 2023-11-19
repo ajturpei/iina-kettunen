@@ -1,5 +1,3 @@
-// import ProjectWithMainImage from 'src/components/Galleries/ProjectWithMainImage'
-// import {ContentWrapper} from 'src/components/Home/HomeStyles'
 import {
   getCategoryProjects,
   getCategoryProjectsCount,
@@ -14,8 +12,7 @@ export const metadata = {
 const SetDesignPage = async () => {
   const {total, items} = (await getCategoryProjects('set')) ?? {}
   const projectDataTotal = await getCategoryProjectsCount('product')
-  // const firstItems = items.filter((_i: any, index: number) => index < 3)
-  // const leftItems = items.filter((_i: any, index: number) => index > 2)
+
   return (
     <>
       <SubNavigation setCount={total} productCount={projectDataTotal} />
@@ -23,9 +20,6 @@ const SetDesignPage = async () => {
       <div>
         <SetDesignView items={items} />
       </div>
-      {/* <ContentWrapper>
-        <ProjectWithMainImage link="/set-design" items={leftItems} />
-      </ContentWrapper> */}
     </>
   )
 }

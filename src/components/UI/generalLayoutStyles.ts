@@ -7,6 +7,13 @@ export const MainContainer = styled.main`
   flex-grow: 1;
 `
 
+export const Section = styled.section`
+  padding: 3rem 0;
+  &:last-child {
+    padding-bottom: 0;
+  }
+`
+
 export const Divider = styled.div`
   border-top: 1px solid ${({theme}) => theme.color.background};
   height: 1px;
@@ -23,7 +30,7 @@ export const Ingress = styled.h3<{small?: boolean}>`
   @media ${device.tablet} {
     font-size: ${({theme, small}) =>
       small ? theme.spacing.medium : theme.spacing.xmedium};
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 `
 

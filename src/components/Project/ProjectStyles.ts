@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import {device} from 'src/theme'
 import styled from 'styled-components'
+import {ItemInfoWrapper, NameWrapper, YearWrapper} from '../Home/HomeStyles'
 
 export const HeaderWrapper = styled.div`
   display: block;
@@ -12,11 +13,7 @@ export const HeaderWrapper = styled.div`
   }
 `
 
-export const SetDesignContainer = styled.div`
-  @media ${device.tablet} {
-    margin-bottom: 6rem;
-  }
-`
+export const SetDesignContainer = styled.div``
 
 export const Name = styled.h1`
   display: block;
@@ -50,7 +47,7 @@ export const Details = styled.div`
 export const Description = styled.p`
   display: block;
   max-width: 50rem;
-  margin-bottom: 4rem;
+  padding-bottom: 3rem;
 `
 
 export const ProjectHeader = styled.div`
@@ -85,21 +82,30 @@ export const GallerySectionHalf = styled.section<{
   margin: 3rem 0;
   display: flex;
   grid-template-columns: 1fr;
-  flex-direction: ${({layoutType}) =>
-    layoutType === 'left' ? 'row' : 'row-reverse'};
   flex-wrap: wrap;
-  gap: 2rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
   @media ${device.tablet} {
+    flex-direction: ${({layoutType}) =>
+      layoutType === 'left' ? 'row' : 'row-reverse'};
+
+    gap: 2rem;
     grid-template-columns: 1fr 1fr;
-  }
-  h5 {
-    margin-top: 0;
-  }
-  > div {
-    width: calc(50% - 2rem);
-    > a > div {
-      min-height: auto;
-      align-items: center;
+    h5 {
+      margin-top: 0;
+      padding: ${({layoutType}) =>
+        layoutType === 'left' ? '0 0 0 3rem' : '0 3rem 0 0'};
+    }
+    > div {
+      width: calc(50% - 2rem);
+      text-align: ${({layoutType}) =>
+        layoutType === 'left' ? 'left' : 'right'};
+
+      > a > div {
+        min-height: auto;
+        align-items: center;
+      }
     }
   }
 `

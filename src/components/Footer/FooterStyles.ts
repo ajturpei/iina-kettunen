@@ -2,7 +2,7 @@ import {device} from 'src/theme'
 import styled from 'styled-components'
 
 export const FooterContainer = styled.footer`
-  margin: 6rem 0 2rem;
+  margin: 7rem 0 2rem;
   font-size: 0.75rem;
   @media ${device.laptop} {
     font-size: 1rem;
