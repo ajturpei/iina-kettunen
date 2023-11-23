@@ -16,7 +16,6 @@ export const metadata = {
 const ContactPage = async () => {
   const {topDescription, image, imageUrl} = (await getContactPage()) || {}
   const {url, description, contentfulMetadata} = image || {}
-  console.log(contentfulMetadata)
   const {tags} = contentfulMetadata || {}
   return (
     <>

@@ -21,7 +21,7 @@ const GallerySection = ({imagesCollection, layoutType}: any) => {
         {imagesCollection?.items?.map(
           (imgCollectionItem: any, imgIndex: number) => {
             const {description, url} = imgCollectionItem
-            console.log(description)
+
             return (
               <div key={`img-half-${imgIndex}`}>
                 <ImageSection>
