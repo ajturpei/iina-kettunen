@@ -47,7 +47,7 @@ export const Details = styled.div`
 export const Description = styled.p`
   display: block;
   max-width: 50rem;
-  padding-bottom: 3rem;
+  padding-bottom: 6rem;
 `
 
 export const ProjectHeader = styled.div`
@@ -70,7 +70,7 @@ export const ProjectYear = styled.div`
 `
 
 export const GallerySectionFull = styled.section`
-  margin: 3rem 0;
+  margin: 0 0 3rem 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -79,7 +79,7 @@ export const GallerySectionFull = styled.section`
 export const GallerySectionHalf = styled.section<{
   layoutType: 'left' | 'right'
 }>`
-  margin: 3rem 0;
+  margin: 0 0 3rem 0;
   display: flex;
   grid-template-columns: 1fr;
   flex-wrap: wrap;
@@ -111,13 +111,14 @@ export const GallerySectionHalf = styled.section<{
 `
 
 export const GallerySection5050 = styled.section`
-  margin: 3rem 0;
+  margin: 0 0 3rem 0;
   display: grid;
   grid-template-columns: 1fr;
   flex-wrap: wrap;
   align-items: flex-end;
-  gap: 2rem;
+  gap: 3rem;
   @media ${device.tablet} {
+    gap: 2rem;
     grid-template-columns: 1fr 1fr;
   }
   > div {
@@ -126,7 +127,7 @@ export const GallerySection5050 = styled.section`
 `
 
 export const GallerySectionTwoThird = styled.section`
-  margin: 3rem 0;
+  margin: 0 0 3rem 0;
   display: flex;
   flex-wrap: wrap;
   width: 100%;

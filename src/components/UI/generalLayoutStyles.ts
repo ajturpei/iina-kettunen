@@ -8,7 +8,7 @@ export const MainContainer = styled.main`
 `
 
 export const Section = styled.section`
-  padding: 3rem 0;
+  padding: 0 0 3rem 0;
   &:last-child {
     padding-bottom: 0;
   }
