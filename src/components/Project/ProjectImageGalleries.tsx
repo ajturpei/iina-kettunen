@@ -20,7 +20,7 @@ const GallerySection = ({imagesCollection, layoutType}: any) => {
       <GallerySection5050>
         {imagesCollection?.items?.map(
           (imgCollectionItem: any, imgIndex: number) => {
-            const {description, url} = imgCollectionItem
+            const {description, url} = imgCollectionItem ?? {}
 
             return (
               <div key={`img-half-${imgIndex}`}>
@@ -44,7 +44,7 @@ const GallerySection = ({imagesCollection, layoutType}: any) => {
       <GallerySectionTwoThird>
         {imagesCollection?.items?.map(
           (imgCollectionItem: any, imgIndex: number) => {
-            const {description, url} = imgCollectionItem
+            const {description, url} = imgCollectionItem ?? {}
             return (
               <Fragment key={`img-half-${imgIndex}`}>
                 <ImageSection>
@@ -64,7 +64,7 @@ const GallerySection = ({imagesCollection, layoutType}: any) => {
     <GallerySectionFull>
       {imagesCollection?.items?.map(
         (imgCollectionItem: any, imgIndex: number) => {
-          const {description, url} = imgCollectionItem
+          const {description, url} = imgCollectionItem ?? {}
           return (
             <ImageSection key={`img-full-${imgIndex}`}>
               <GalleryImage src={url} alt={description} />

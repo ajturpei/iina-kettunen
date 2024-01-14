@@ -21,6 +21,7 @@ const manRope = Manrope({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.iinakettunen.com'),
   title: 'Designer Iina Kettunen | Product, Furniture and Set Design',
   description:
     'Product and furniture designer with passion for well-thought aesthetics of everyday life.',
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: 'https://iinakettunen.com/iina_og.png',
+        url: 'https://www.iinakettunen.com/iina_og.png',
       },
     ],
   },
